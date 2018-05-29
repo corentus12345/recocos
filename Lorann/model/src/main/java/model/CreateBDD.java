@@ -22,7 +22,7 @@ public class CreateBDD {
 					"root", "");
 			Statement stmt = cnx.createStatement();
 
-			InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level1.txt");
+			InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level1.txt");
 			InputStreamReader lire = new InputStreamReader(is);
 			BufferedReader buff = new BufferedReader(lire);
 
