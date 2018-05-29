@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class CreateBDD {
 	
 	public CreateBDD() {
-		for(int level = 1; level <= 2; level++) {
+		for(int level = 1; level <= 5; level++) {
 			ArrayList<String> list = new ArrayList<String>();
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
@@ -48,6 +48,39 @@ public class CreateBDD {
 					}
 					buff.close();
 				}
+				else if(level == 3) {
+					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level3.txt");
+					InputStreamReader lire = new InputStreamReader(is);
+					BufferedReader buff = new BufferedReader(lire);
+					String ligne;
+	
+					while ((ligne = buff.readLine()) != null) {
+						list.add(ligne);
+					}
+					buff.close();
+				}
+				else if(level == 4) {
+					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level4.txt");
+					InputStreamReader lire = new InputStreamReader(is);
+					BufferedReader buff = new BufferedReader(lire);
+					String ligne;
+	
+					while ((ligne = buff.readLine()) != null) {
+						list.add(ligne);
+					}
+					buff.close();
+				}
+				else if(level == 5) {
+					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level5.txt");
+					InputStreamReader lire = new InputStreamReader(is);
+					BufferedReader buff = new BufferedReader(lire);
+					String ligne;
+	
+					while ((ligne = buff.readLine()) != null) {
+						list.add(ligne);
+					}
+					buff.close();
+				}
 	
 				int x, y;
 				for (y = 0; y <= 16; y++) {
@@ -60,39 +93,39 @@ public class CreateBDD {
 						switch (sprite) {
 						case '|':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"|\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case ' ':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\" \","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case 'X':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"X\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case '-':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"-\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case '.':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\".\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case 'i':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"i\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case 'o':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"o\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case 'H':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"H\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						case 'p':
 							stmt.executeUpdate("INSERT INTO level(Type_de_structure, X, Y, Numero_du_niveau) VALUES(\"p\","
-									+ x + "," + y + ", 1)");
+									+ x + "," + y + ","  + level + ")");
 							break;
 						default:
 							break;
@@ -101,6 +134,7 @@ public class CreateBDD {
 				}
 				stmt.close();
 				cnx.close();
+				list.clear();
 			} catch (ClassNotFoundException | SQLException | IOException e) {
 				e.printStackTrace();
 			}
