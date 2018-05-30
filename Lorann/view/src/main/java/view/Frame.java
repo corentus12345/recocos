@@ -6,6 +6,7 @@ public class Frame extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	public static Panel panel;
+	public static int debut = 0;
 		
 	public Frame() {
 		this.setTitle("Lorann");
