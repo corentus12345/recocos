@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import view.BuilderGraphics;
+import view.Frame;
 
 public class Decorations {
 	private BufferedImage img;
