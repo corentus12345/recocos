@@ -1,10 +1,11 @@
 package main;
 
+import controller.Controller;
+
 public class Main {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Controller controle = new Controller();
 	}
-
 }
