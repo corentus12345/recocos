@@ -11,7 +11,7 @@ public class BuilderGraphics extends Observable{
 	}
 	
 	public void applyGraphics(Graphics g) {
-		g.drawString("88888888", 50, 50);
+		g.drawString(WallH, xWallH, yWallH);
 	}
 	
 }
