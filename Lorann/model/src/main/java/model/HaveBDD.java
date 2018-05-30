@@ -45,17 +45,17 @@ public class HaveBDD {
 			if(level == 1) {
 				ResultSetMetaData resulMeta = result.getMetaData();
 				for(int a = 1; a <= resulMeta.getColumnCount(); a++) {
-					System.out.print("\t" + resulMeta.getColumnName(a).toUpperCase() + "\t *");
+					//System.out.print("\t" + resulMeta.getColumnName(a).toUpperCase() + "\t *");
 				}
-				System.out.println("\n*********************************************************************************************");
+				//System.out.println("\n*********************************************************************************************");
 				while(result.next()) {
 					for(int a = 1; a <= resulMeta.getColumnCount(); a++) {
-						System.out.print("\t" + result.getObject(a).toString() + "\t *");
+						//System.out.print("\t" + result.getObject(a).toString() + "\t *");
 						try {
 							switch (result.getObject(a).toString()) {
 							case "-":
 								BufferedImage wallH;
-									wallH = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite"));
+									wallH = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\horizontal_bone.png"));
 									String g = result.getObject(2).toString();
 									int x = Integer.valueOf(g);
 									String t = result.getObject(3).toString();
@@ -70,7 +70,7 @@ public class HaveBDD {
 							e.printStackTrace();
 						}
 					}
-					System.out.println("\n_______________________________________________________________________________________________");
+					//System.out.println("\n_______________________________________________________________________________________________");
 				}
 			}
 		} catch (ClassNotFoundException | SQLException e) {
