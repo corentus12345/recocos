@@ -155,8 +155,9 @@ public class HaveBDD {
 				default:
 					break;
 				}
+				Frame.panel.repaint();
 			}
-		Frame.panel.repaint();
+		
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

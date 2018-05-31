@@ -34,8 +34,8 @@ public class Panel extends JPanel{
 				for(int y1 = 0; y1 < 17; y1++) {
 					for(int x1 = 0; x1 < 22; x1++) {
 						if(x1 == getXPerso() && y1 == getYPerso()) {
-							black = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
-							g.drawImage(black, getXpersoImage() * 32, getYpersoImage() * 32, null);
+//							black = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
+//							g.drawImage(black, getXpersoImage() * 32, getYpersoImage() * 32, null);
 							g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
 						}
 						else {
