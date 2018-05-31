@@ -29,12 +29,40 @@ public class Frame extends JFrame implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-			panel.setXPerso(panel.getXPerso() + 1);
-			Frame.panel.repaint();
+			if(panel.img[panel.getXPerso() + 1][panel.getYPerso()] == null) {
+				panel.setXPerso(panel.getXPerso() + 1);
+				if(panel.getXPerso() > 20) {
+					panel.setXPerso(panel.getXPerso() - 1);
+				}
+				Frame.panel.repaint();
+			}
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
-			panel.setXPerso(panel.getXPerso() - 1);
-			Frame.panel.repaint();
+			if(panel.img[panel.getXPerso() - 1][panel.getYPerso()] == null) {
+				panel.setXPerso(panel.getXPerso() - 1);
+				if(panel.getXPerso() < 1) {
+					panel.setXPerso(panel.getXPerso() + 1);
+				}
+				Frame.panel.repaint();
+			}
+		}
+		if(evt.getKeyCode() == KeyEvent.VK_UP) {
+			if(panel.img[panel.getXPerso()][panel.getYPerso() - 1] == null) {
+				panel.setYPerso(panel.getYPerso() - 1);
+				if(panel.getYPerso() < 1) {
+					panel.setYPerso(panel.getYPerso() + 1);
+				}
+				Frame.panel.repaint();
+			}
+		}
+		if(evt.getKeyCode() == KeyEvent.VK_DOWN) {
+			if(panel.img[panel.getXPerso()][panel.getYPerso() + 1] == null) {
+				panel.setYPerso(panel.getYPerso() + 1);
+				if(panel.getYPerso() > 15) {
+					panel.setYPerso(panel.getYPerso() - 1);
+				}
+				Frame.panel.repaint();
+			}
 		}
 	}
 
