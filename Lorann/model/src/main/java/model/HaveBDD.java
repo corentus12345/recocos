@@ -118,6 +118,8 @@ public class HaveBDD {
 					Frame.debut = 1;
 					try {
 						Frame.panel.img[x6][y6] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\purse.png"));
+						Frame.panel.coordItemx[x6][y6] = x6;
+						Frame.panel.coordItemy[x6][y6] = y6;
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -130,6 +132,8 @@ public class HaveBDD {
 					Frame.debut = 1;
 					try {
 						Frame.panel.img[x7][y7] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\crystal_ball.png"));
+						Frame.panel.coordKeyx[x7][y7] = x7;
+						Frame.panel.coordKeyx[x7][y7] = y7;
 					} catch (IOException e) {
 						e.printStackTrace();
 					}

@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 public class Panel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public BufferedImage img[][] = new BufferedImage[22][17];
+	public int coordItemx[][] = new int[22][17];
+	public int coordItemy[][] = new int[22][17];
+	public int coordKeyx[][] = new int[22][17];
+	public int coordKeyy[][] = new int[22][17];
 	private int xPerso;
 	private int yPerso;
 	private int xPersoImage;

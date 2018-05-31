@@ -10,6 +10,7 @@ public class Frame extends JFrame implements KeyListener{
 	private static final long serialVersionUID = 1L;
 	public static Panel panel;
 	public static int debut = 0;
+	private MooveLorann mv = new MooveLorann();
 		
 	public Frame() {
 		this.setTitle("Lorann");
@@ -29,41 +30,30 @@ public class Frame extends JFrame implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-			if(panel.img[panel.getXPerso() + 1][panel.getYPerso()] == null) {
-				panel.setXPerso(panel.getXPerso() + 1);
-				if(panel.getXPerso() > 20) {
-					panel.setXPerso(panel.getXPerso() - 1);
-				}
-				Frame.panel.repaint();
+			if(panel.img[panel.getXPerso() + 1][panel.getYPerso()] == null || (panel.getXPerso() + 1 == panel.coordItemx[panel.getXPerso() + 1][panel.getYPerso()] && panel.getYPerso() == panel.coordItemy[panel.getXPerso() + 1][panel.getYPerso()])) {
+				mv.mooveRight();
+
 			}
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
-			if(panel.img[panel.getXPerso() - 1][panel.getYPerso()] == null) {
-				panel.setXPerso(panel.getXPerso() - 1);
-				if(panel.getXPerso() < 1) {
-					panel.setXPerso(panel.getXPerso() + 1);
-				}
-				Frame.panel.repaint();
+			if(panel.img[panel.getXPerso() - 1][panel.getYPerso()] == null || (panel.getXPerso() - 1 == panel.coordItemx[panel.getXPerso() - 1][panel.getYPerso()] && panel.getYPerso() == panel.coordItemy[panel.getXPerso() - 1][panel.getYPerso()])) {
+				mv.mooveLeft();
+
 			}
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_UP) {
-			if(panel.img[panel.getXPerso()][panel.getYPerso() - 1] == null) {
-				panel.setYPerso(panel.getYPerso() - 1);
-				if(panel.getYPerso() < 1) {
-					panel.setYPerso(panel.getYPerso() + 1);
-				}
-				Frame.panel.repaint();
+			if(panel.img[panel.getXPerso()][panel.getYPerso() - 1] == null || (panel.getYPerso() - 1 == panel.coordItemy[panel.getXPerso()][panel.getYPerso() - 1] && panel.getXPerso() == panel.coordItemx[panel.getXPerso()][panel.getYPerso() - 1])) {
+				mv.mooveUp();
+
 			}
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_DOWN) {
-			if(panel.img[panel.getXPerso()][panel.getYPerso() + 1] == null) {
-				panel.setYPerso(panel.getYPerso() + 1);
-				if(panel.getYPerso() > 15) {
-					panel.setYPerso(panel.getYPerso() - 1);
-				}
-				Frame.panel.repaint();
+			if(panel.img[panel.getXPerso()][panel.getYPerso() + 1] == null || (panel.getYPerso() + 1 == panel.coordItemy[panel.getXPerso()][panel.getYPerso() + 1] && panel.getXPerso() == panel.coordItemx[panel.getXPerso()][panel.getYPerso() + 1])) {
+				mv.mooveDown();
+				
 			}
 		}
+		panel.repaint();
 	}
 
 	@Override
