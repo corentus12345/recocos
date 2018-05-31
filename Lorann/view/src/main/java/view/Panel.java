@@ -32,7 +32,6 @@ public class Panel extends JPanel{
 			for(int y1 = 0; y1 < 17; y1++) {
 				for(int x1 = 0; x1 < 22; x1++) {
 					if(x1 == getXPerso() && y1 == getYPerso()) {
-						System.out.println("rien");
 						g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
 					}
 					else {
