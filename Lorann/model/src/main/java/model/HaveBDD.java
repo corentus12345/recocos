@@ -1,11 +1,15 @@
 package model;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+
+import javax.imageio.ImageIO;
 
 import view.Frame;
 
@@ -41,23 +45,58 @@ public class HaveBDD {
 			}
 			if(level == 1) {
 				ResultSetMetaData resulMeta = result.getMetaData();
-				for(int a = 1; a <= resulMeta.getColumnCount(); a++) {
-					//System.out.print("\t" + resulMeta.getColumnName(a).toUpperCase() + "\t *");
-				}
-				//System.out.println("\n*********************************************************************************************");
+//				for(int a = 1; a <= resulMeta.getColumnCount(); a++) {
+//					//System.out.print("\t" + resulMeta.getColumnName(a).toUpperCase() + "\t *");
+//				}
+//				//System.out.println("\n*********************************************************************************************");
 				while(result.next()) {
 					for(int a = 1; a <= resulMeta.getColumnCount(); a++) {
-						switch (result.getObject(a).toString()) {
+						switch (result.getObject(1).toString()) {
 						case "-":
-								String g = result.getObject(2).toString();
-								int x = Integer.valueOf(g);
-								String t = result.getObject(3).toString();
-								int y = Integer.valueOf(t);
-								Frame.debut = 1;
-								Frame.panel.setXWallHorizontal(x);
-								Frame.panel.setYWallHorizontal(y);
+							String g = result.getObject(2).toString();
+							Frame.panel.x= Integer.valueOf(g);
+							String t = result.getObject(3).toString();
+							Frame.panel.y = Integer.valueOf(t);
+							Frame.debut = 1;
+							try {
+								Frame.panel.img[Frame.panel.x][Frame.panel.y] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\horizontal_bone.png"));
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
 							break;
-
+						case "|":
+							String g2 = result.getObject(2).toString();
+							Frame.panel.x= Integer.valueOf(g2);
+							String t2 = result.getObject(3).toString();
+							Frame.panel.y = Integer.valueOf(t2);
+							Frame.debut = 1;
+							try {
+								Frame.panel.img[Frame.panel.x][Frame.panel.y] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\vertical_bone.png"));
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						case ".":
+							String g3 = result.getObject(2).toString();
+							Frame.panel.x= Integer.valueOf(g3);
+							String t3 = result.getObject(3).toString();
+							Frame.panel.y = Integer.valueOf(t3);
+							Frame.debut = 1;
+							try {
+								Frame.panel.img[Frame.panel.x][Frame.panel.y] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\bone.png"));
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						case "p":
+							String g4 = result.getObject(2).toString();
+							Frame.panel.x= Integer.valueOf(g4);
+							String t4 = result.getObject(3).toString();
+							Frame.panel.y = Integer.valueOf(t4);
+							Frame.debut = 1;
+							try {
+								Frame.panel.img[Frame.panel.x][Frame.panel.y] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\gate_closed.png"));
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
 						default:
 							break;
 						}
