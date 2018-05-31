@@ -137,12 +137,12 @@ public class HaveBDD {
 					break;
 				case "H":
 					String g8 = result.getObject(2).toString();
-					int x8 = Integer.valueOf(g8);
+					Frame.panel.setXPerso(Integer.valueOf(g8));
 					String t8 = result.getObject(3).toString();
-					int y8 = Integer.valueOf(t8);
+					Frame.panel.setYPerso(Integer.valueOf(t8));
 					Frame.debut = 1;
 					try {
-						Frame.panel.img[x8][y8] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\lorann_r.png"));
+						Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso()] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\lorann_r.png"));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
