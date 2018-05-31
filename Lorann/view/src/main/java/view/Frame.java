@@ -10,7 +10,9 @@ public class Frame extends JFrame{
 		
 	public Frame() {
 		this.setTitle("Lorann");
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		this.setSize(32*22 + 20, 32*18 + 10);
+		this.setLocationRelativeTo(null);
+		this.setResizable(false);
 		panel = new Panel();
 			
 		this.setContentPane(panel);
