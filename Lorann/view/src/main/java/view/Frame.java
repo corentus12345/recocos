@@ -17,7 +17,7 @@ public class Frame extends JFrame implements KeyListener{
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		panel = new Panel();
-		
+		System.out.println("l");
 		setFocusable(true);
 	    addKeyListener(this);
 		
@@ -30,12 +30,12 @@ public class Frame extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
 			System.out.println("s");
-			panel.setXPerso(panel.getXPerso() + 10);
+			panel.setXPerso(panel.getXPerso() + 1);
 			Frame.panel.repaint();
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
 			System.out.println("s");
-			panel.setXPerso(panel.getXPerso() - 10);
+			panel.setXPerso(panel.getXPerso() - 1);
 			Frame.panel.repaint();
 		}
 	}

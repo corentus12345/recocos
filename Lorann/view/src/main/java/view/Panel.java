@@ -13,6 +13,8 @@ public class Panel extends JPanel{
 	public BufferedImage img[][] = new BufferedImage[22][17];
 	private int xPerso;
 	private int yPerso;
+	private int xPersoImage;
+	private int yPersoImage;
 	
 	public Panel() {
 
@@ -30,14 +32,14 @@ public class Panel extends JPanel{
 			for(int y1 = 0; y1 < 17; y1++) {
 				for(int x1 = 0; x1 < 22; x1++) {
 					if(x1 == getXPerso() && y1 == getYPerso()) {
-						g.drawImage(img[x1][y1], getXPerso() * 32, getYPerso() *32, null);
+						System.out.println("rien");
+						g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
 					}
 					else {
 						g.drawImage(img[x1][y1], x1 * 32, y1 *32, null);
 					}
 				}
 			}
-			
 		}
 	}
 	
@@ -55,5 +57,21 @@ public class Panel extends JPanel{
 	
 	public int getYPerso() {
 		return yPerso;
+	}
+	
+	public void setXpersoImage(int xPersoImage) {
+		this.xPersoImage = xPersoImage;
+	}
+	
+	public int getXpersoImage() {
+		return xPersoImage;
+	}
+	
+	public void setYpersoImage(int yPersoImage) {
+		this.yPersoImage = yPersoImage;
+	}
+	
+	public int getYpersoImage() {
+		return yPersoImage;
 	}
 }

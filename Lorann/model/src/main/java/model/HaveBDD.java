@@ -49,7 +49,6 @@ public class HaveBDD {
 			}
 			while(result.next()) {
 				String test = result.getObject(1).toString();
-				System.out.println(test);
 				switch (test) {
 				case "-":
 					String g = result.getObject(2).toString();
@@ -138,8 +137,10 @@ public class HaveBDD {
 				case "H":
 					String g8 = result.getObject(2).toString();
 					Frame.panel.setXPerso(Integer.valueOf(g8));
+					Frame.panel.setXpersoImage(Integer.valueOf(g8));
 					String t8 = result.getObject(3).toString();
 					Frame.panel.setYPerso(Integer.valueOf(t8));
+					Frame.panel.setYpersoImage(Integer.valueOf(t8));
 					Frame.debut = 1;
 					try {
 						Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso()] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\lorann_r.png"));
