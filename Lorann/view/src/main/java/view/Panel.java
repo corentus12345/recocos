@@ -58,8 +58,7 @@ public class Panel extends JPanel{
 				}
 			}
 			else if(Frame.debut == 2) {
-				
-				g.drawImage(fond, 0, 0, null);
+
 				g.drawImage(end, 0, 0, null);
 				
 			}
