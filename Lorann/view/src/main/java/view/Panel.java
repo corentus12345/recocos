@@ -15,6 +15,8 @@ public class Panel extends JPanel{
 	public int coordItemy[][] = new int[22][17];
 	public int coordKeyx[][] = new int[22][17];
 	public int coordKeyy[][] = new int[22][17];
+	public int coordDoorx[][] = new int[22][17];
+	public int coordDoory[][] = new int[22][17];
 	private int xPerso;
 	private int yPerso;
 	private int xPersoImage;

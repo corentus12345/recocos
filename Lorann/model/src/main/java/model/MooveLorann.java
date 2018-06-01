@@ -1,9 +1,8 @@
 package model;
 
-import contract.IKeyPressed;
 import view.Frame;
 
-public class MooveLorann implements IKeyPressed{
+public class MooveLorann{
 	
 	public void mooveRight() {
 		Frame.panel.setXPerso(Frame.panel.getXPerso() + 1);

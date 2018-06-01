@@ -1,11 +1,11 @@
 package contract;
 
 public abstract interface IKeyPressed {
-	public void mooveRight();
+	public void right(int level, IController control);
 	
-	public void mooveLeft();
+	public void left(int level, IController control);
 
-	public void mooveUp();
+	public void up(int level, IController control);
 
-	public void mooveDown();
+	public void down(int level, IController control);
 }

@@ -79,6 +79,8 @@ public class Decorations {
 		
 		try {
 			Frame.panel.img[x4][y4] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\gate_closed.png"));
+			Frame.panel.coordDoorx[x4][y4] = x4;
+			Frame.panel.coordDoory[x4][y4] = y4;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

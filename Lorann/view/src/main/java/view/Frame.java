@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
+import contract.IController;
 import contract.IKeyPressed;
 
 public class Frame extends JFrame implements KeyListener{
@@ -14,9 +15,13 @@ public class Frame extends JFrame implements KeyListener{
 	public static int debut = 0;
 	public static boolean key = false;
 	private IKeyPressed mv;
+	private int level;
+	private IController control;
 		
-	public Frame(IKeyPressed mv) {
+	public Frame(IKeyPressed mv, int level, IController control) {
 		this.mv = mv;
+		this.level = level;
+		this.control = control;
 		
 		this.setTitle("Lorann");
 		this.setSize(32*22 + 20, 32*18 + 10);
@@ -35,80 +40,24 @@ public class Frame extends JFrame implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
-			if(panel.img[panel.getXPerso() + 1][panel.getYPerso()] == null || (panel.getXPerso() + 1 == panel.getXpersoImage() && panel.getYPerso() == panel.getYpersoImage())) {
-				
-				mv.mooveRight();
-				
-			}
-			else if(panel.getXPerso() + 1 == panel.coordItemx[panel.getXPerso() + 1][panel.getYPerso()] && panel.getYPerso() == panel.coordItemy[panel.getXPerso() + 1][panel.getYPerso()]) {
-				
-				mv.mooveRight();
-				//Faire la méthode de comptage de point
-				
-			}
-			else if(panel.getXPerso() + 1 == panel.coordKeyx[panel.getXPerso() + 1][panel.getYPerso()] && panel.getYPerso() == panel.coordKeyy[panel.getXPerso() + 1][panel.getYPerso()]) {
-				
-				mv.mooveRight();
-				key = true;
-				
-			}
+			
+			mv.right(level, control);
+			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
-			if(panel.img[panel.getXPerso() - 1][panel.getYPerso()] == null || (panel.getXPerso() - 1 == panel.getXpersoImage() && panel.getYPerso() == panel.getYpersoImage())) {
-				
-				mv.mooveLeft();
-			}
 			
-			else if(panel.getXPerso() - 1 == panel.coordItemx[panel.getXPerso() - 1][panel.getYPerso()] && panel.getYPerso() == panel.coordItemy[panel.getXPerso() - 1][panel.getYPerso()]) {
-				
-				mv.mooveLeft();
-				//Faire la méthode de comptage de point
-				
-			}
-			else if(panel.getXPerso() - 1 == panel.coordKeyx[panel.getXPerso() - 1][panel.getYPerso()] && panel.getYPerso() == panel.coordKeyy[panel.getXPerso() - 1][panel.getYPerso()]) {
-				
-				mv.mooveLeft();
-				key = true;
-				
-			}
+			mv.left(level, control);
+			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_UP) {
-			if(panel.img[panel.getXPerso()][panel.getYPerso() - 1] == null || (panel.getXPerso() == panel.getXpersoImage() && panel.getYPerso() - 1 == panel.getYpersoImage())) {
-				
-				mv.mooveUp();
-				
-			}
-			else if(panel.getYPerso() - 1 == panel.coordItemy[panel.getXPerso()][panel.getYPerso() - 1] && panel.getXPerso() == panel.coordItemx[panel.getXPerso()][panel.getYPerso() - 1]) {
-				
-				mv.mooveUp();
-				//Faire la méthode de comptage de point
-				
-			}
-			else if(panel.getYPerso() == panel.coordKeyx[panel.getXPerso()][panel.getYPerso() - 1] && panel.getYPerso() + 1 == panel.coordKeyy[panel.getXPerso()][panel.getYPerso() - 1]) {
-				
-				mv.mooveUp();
-				key = true;
-				
-			}
+			
+			mv.up(level, control);
+			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_DOWN) {
-			if(panel.img[panel.getXPerso()][panel.getYPerso() + 1] == null || (panel.getXPerso() == panel.getXpersoImage() && panel.getYPerso() + 1 == panel.getYpersoImage())) {
-				
-				mv.mooveDown();			
-				
-			}
-			else if(panel.getYPerso() + 1 == panel.coordItemy[panel.getXPerso()][panel.getYPerso() + 1] && panel.getXPerso() == panel.coordItemx[panel.getXPerso()][panel.getYPerso() + 1]) {
-				
-				mv.mooveDown();
-				//Faire la méthode de comptage de point
-				
-			}
-			else if(panel.getXPerso() == panel.coordKeyx[panel.getXPerso()][panel.getYPerso() + 1] && panel.getYPerso() + 1 == panel.coordKeyy[panel.getXPerso()][panel.getYPerso() + 1]) {
-				
-				mv.mooveDown();
-				key = true;
-				
-			}
+			
+			mv.down(level, control);
+			
 		}
 		panel.repaint();
 	}

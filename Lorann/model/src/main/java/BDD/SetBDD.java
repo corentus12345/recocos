@@ -77,7 +77,7 @@ public class SetBDD {
 					
 					new Lorann(g8, t8);
 					
-					break;
+					break;				
 				default:
 					break;
 				}		
