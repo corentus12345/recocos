@@ -2,6 +2,7 @@ package controller;
 
 import BDD.HaveBDD;
 import contract.IController;
+import model.CleanBoard;
 import view.Frame;
 
 public class Level implements IController{
@@ -10,6 +11,7 @@ public class Level implements IController{
 	public void setLevel(int level) {
 		this.level = level;
 		if(Frame.debut == 1) {
+			new CleanBoard();
 			new HaveBDD(getLevel());
 		}
 	}

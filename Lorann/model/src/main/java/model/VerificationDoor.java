@@ -20,7 +20,7 @@ public class VerificationDoor{
 	
 	public void doorOpen(int level) {
 		
-		control.setLevel(level + 1);
+		control.setLevel(control.getLevel() + 1);
 
 	}
 	

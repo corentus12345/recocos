@@ -53,6 +53,12 @@ public class KeyPressed implements IKeyPressed{
 			Frame.key = true;
 			
 		}
+		else if(Frame.panel.getXPerso() - 1 == Frame.panel.coordDoorx[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordDoory[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()]) {
+			
+			mv.mooveLeft();
+			new VerificationDoor(level, control);
+			
+		}
 	}
 
 	@Override
@@ -68,10 +74,16 @@ public class KeyPressed implements IKeyPressed{
 			//Faire la méthode de comptage de point
 			
 		}
-		else if(Frame.panel.getYPerso() == Frame.panel.coordKeyx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getYPerso() + 1 == Frame.panel.coordKeyy[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) {
+		else if(Frame.panel.getXPerso() == Frame.panel.coordKeyx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getYPerso() - 1 == Frame.panel.coordKeyy[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) {
 			
 			mv.mooveUp();
 			Frame.key = true;
+			
+		}
+		else if(Frame.panel.getYPerso() - 1 == Frame.panel.coordDoory[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getXPerso() == Frame.panel.coordDoorx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) {
+			
+			mv.mooveUp();
+			new VerificationDoor(level, control);
 			
 		}
 	}
@@ -93,6 +105,12 @@ public class KeyPressed implements IKeyPressed{
 			
 			mv.mooveDown();
 			Frame.key = true;
+			
+		}
+		else if(Frame.panel.getYPerso() + 1 == Frame.panel.coordDoory[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] && Frame.panel.getXPerso() == Frame.panel.coordDoorx[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1]) {
+			
+			mv.mooveDown();
+			new VerificationDoor(level, control);
 			
 		}
 	}

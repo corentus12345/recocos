@@ -84,7 +84,6 @@ public class SetBDD {
 					String t9 = result.getObject(3).toString();
 					
 					new Empty(g9, t9);
-					
 				default:
 					break;
 				}		
