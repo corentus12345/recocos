@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import model.CreateBDD;
 import model.HaveBDD;
+import model.MooveLorann;
 import view.Frame;
 
 public class Controller {
@@ -15,8 +16,9 @@ public class Controller {
 		sc = new Scanner(System.in);
 		System.out.println("Par quel niveau voulez-vous commencer (1 à 5) ?");
 		level = sc.nextInt();
+		
 		CreateBDD bdd = new CreateBDD();
-		Frame frame = new Frame();
+		Frame frame = new Frame(new MooveLorann());
 		HaveBDD map = new HaveBDD(level);
 	}
 }

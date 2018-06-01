@@ -26,20 +26,23 @@ public class Panel extends JPanel{
 	
 	public void paintComponent(Graphics g) {
 		BufferedImage fond;
-		BufferedImage black;
 		try {
+			
 			fond = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\fond.png"));
 			g.drawImage(fond, 0, 0, null);
+			
 			if(Frame.debut == 1) {
 				for(int y1 = 0; y1 < 17; y1++) {
 					for(int x1 = 0; x1 < 22; x1++) {
-						if(x1 == getXPerso() && y1 == getYPerso()) {
-//							black = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
-//							g.drawImage(black, getXpersoImage() * 32, getYpersoImage() * 32, null);
+						if((x1 == getXPerso() && y1 == getYPerso()) || (x1 == getXpersoImage() && y1 == getYpersoImage())) {
+							
 							g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
+							
 						}
 						else {
+							
 							g.drawImage(img[x1][y1], x1 * 32, y1 *32, null);
+							
 						}
 					}
 				}
