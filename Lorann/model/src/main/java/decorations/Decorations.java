@@ -119,6 +119,8 @@ public class Decorations {
 			Frame.panel.img[x7][y7] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\crystal_ball.png"));
 			Frame.panel.coordKeyx[x7][y7] = x7;
 			Frame.panel.coordKeyy[x7][y7] = y7;
+			Frame.panel.setXKeyImage(x7);
+			Frame.panel.setYKeyImage(y7);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

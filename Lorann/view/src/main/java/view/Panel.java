@@ -19,6 +19,8 @@ public class Panel extends JPanel{
 	private int yPerso;
 	private int xPersoImage;
 	private int yPersoImage;
+	private int xKeyImage;
+	private int yKeyImage;
 	
 	public Panel() {
 
@@ -26,9 +28,11 @@ public class Panel extends JPanel{
 	
 	public void paintComponent(Graphics g) {
 		BufferedImage fond;
+		BufferedImage square;
 		try {
 			
 			fond = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\fond.png"));
+			square = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
 			g.drawImage(fond, 0, 0, null);
 			
 			if(Frame.debut == 1) {
@@ -39,13 +43,19 @@ public class Panel extends JPanel{
 							g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
 							
 						}
-						else {
+						else{
 							
 							g.drawImage(img[x1][y1], x1 * 32, y1 *32, null);
 							
 						}
 					}
 				}
+			}
+			if(Frame.key) {
+				
+				g.drawImage(square, getXKeyImage() * 32, getYKeyImage() * 32, null);
+				g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
+				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -82,5 +92,21 @@ public class Panel extends JPanel{
 	
 	public int getYpersoImage() {
 		return yPersoImage;
+	}
+	
+	public void setXKeyImage(int xKeyImage) {
+		this.xKeyImage = xKeyImage;
+	}
+	
+	public int getXKeyImage() {
+		return xKeyImage;
+	}
+	
+	public void setYKeyImage(int yKeyImage) {
+		this.yKeyImage = yKeyImage;
+	}
+	
+	public int getYKeyImage() {
+		return yKeyImage;
 	}
 }

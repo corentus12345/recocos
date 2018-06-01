@@ -50,7 +50,6 @@ public class Frame extends JFrame implements KeyListener{
 				
 				mv.mooveRight();
 				key = true;
-				System.out.println(key);
 				
 			}
 		}
@@ -70,7 +69,6 @@ public class Frame extends JFrame implements KeyListener{
 				
 				mv.mooveLeft();
 				key = true;
-				System.out.println(key);
 				
 			}
 		}
@@ -90,7 +88,6 @@ public class Frame extends JFrame implements KeyListener{
 				
 				mv.mooveUp();
 				key = true;
-				System.out.println(key);
 				
 			}
 		}
@@ -110,7 +107,6 @@ public class Frame extends JFrame implements KeyListener{
 				
 				mv.mooveDown();
 				key = true;
-				System.out.println(key);
 				
 			}
 		}
