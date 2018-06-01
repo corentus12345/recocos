@@ -26,7 +26,7 @@ public class VerificationDoor{
 	
 	public void doorClose() {
 		
-		System.out.print("Game over");
+		Frame.debut = 2;
 		
 	}
 }
