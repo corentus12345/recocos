@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import decorations.Door;
+import decorations.Empty;
 import decorations.Item;
 import decorations.Key;
 import decorations.Lorann;
@@ -77,7 +78,13 @@ public class SetBDD {
 					
 					new Lorann(g8, t8);
 					
-					break;				
+					break;
+				case " ":
+					String g9 = result.getObject(2).toString();
+					String t9 = result.getObject(3).toString();
+					
+					new Empty(g9, t9);
+					
 				default:
 					break;
 				}		

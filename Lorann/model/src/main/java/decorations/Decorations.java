@@ -9,7 +9,7 @@ import view.Frame;
 
 public class Decorations {
 
-	protected Decorations(String g, String t, String g2, String t2, String g3, String t3, String g4, String t4, String g5, String t5, String g6, String t6, String g7, String t7, String g8, String t8) {
+	protected Decorations(String g, String t, String g2, String t2, String g3, String t3, String g4, String t4, String g5, String t5, String g6, String t6, String g7, String t7, String g8, String t8, String g9, String t9) {
 		if(g != null) {
 			setImageWallHorizontal(g, t);
 		}
@@ -33,6 +33,9 @@ public class Decorations {
 		}
 		else if(g8 != null) {
 			setImageLorann(g8, t8);
+		}
+		else if(g9 != null) {
+			setImageEmpty(g9, t9);
 		}
 	}
 	
@@ -138,6 +141,20 @@ public class Decorations {
 		
 		try {
 			Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso()] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\lorann_r.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void setImageEmpty(String g9, String t9) {
+		
+		int x9 = Integer.valueOf(g9);
+		int y9 = Integer.valueOf(t9);
+		
+		try {
+			Frame.panel.img[x9][y9] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
+			Frame.panel.coordEmptyx[x9][y9] = x9;
+			Frame.panel.coordEmptyy[x9][y9] = y9;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -9,7 +9,7 @@ public class KeyPressed implements IKeyPressed{
 	
 	@Override
 	public void right(int level, IController control) {
-		if(Frame.panel.img[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()] == null || (Frame.panel.getXPerso() + 1 == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() == Frame.panel.getYpersoImage())) {
+		if((Frame.panel.getXPerso() + 1 == Frame.panel.coordEmptyx[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordEmptyy[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()]) || (Frame.panel.getXPerso() + 1 == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveRight();
 			
@@ -36,7 +36,7 @@ public class KeyPressed implements IKeyPressed{
 
 	@Override
 	public void left(int level, IController control) {
-		if(Frame.panel.img[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] == null || (Frame.panel.getXPerso() - 1 == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() == Frame.panel.getYpersoImage())) {
+		if((Frame.panel.getXPerso() - 1 == Frame.panel.coordEmptyx[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordEmptyy[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()]) || (Frame.panel.getXPerso() - 1 == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveLeft();
 		}
@@ -57,7 +57,7 @@ public class KeyPressed implements IKeyPressed{
 
 	@Override
 	public void up(int level, IController control) {
-		if(Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] == null || (Frame.panel.getXPerso() == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() - 1 == Frame.panel.getYpersoImage())) {
+		if((Frame.panel.getYPerso() - 1 == Frame.panel.coordEmptyy[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getXPerso() == Frame.panel.coordEmptyx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) || (Frame.panel.getXPerso() == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() - 1 == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveUp();
 			
@@ -78,7 +78,7 @@ public class KeyPressed implements IKeyPressed{
 
 	@Override
 	public void down(int level, IController control) {
-		if(Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] == null || (Frame.panel.getXPerso() == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() + 1 == Frame.panel.getYpersoImage())) {
+		if((Frame.panel.getYPerso() + 1 == Frame.panel.coordEmptyy[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] && Frame.panel.getXPerso() == Frame.panel.coordEmptyx[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1]) || (Frame.panel.getXPerso() == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() + 1 == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveDown();			
 			
