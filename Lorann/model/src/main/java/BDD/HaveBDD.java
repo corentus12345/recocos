@@ -1,4 +1,4 @@
-package model;
+package BDD;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;

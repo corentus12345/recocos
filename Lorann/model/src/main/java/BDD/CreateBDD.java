@@ -1,4 +1,4 @@
-package model;
+package BDD;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

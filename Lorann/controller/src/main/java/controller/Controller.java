@@ -2,8 +2,8 @@ package controller;
 
 import java.util.Scanner;
 
-import model.CreateBDD;
-import model.HaveBDD;
+import BDD.CreateBDD;
+import BDD.HaveBDD;
 import model.MooveLorann;
 import view.Frame;
 

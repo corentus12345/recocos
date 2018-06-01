@@ -12,6 +12,7 @@ public class Frame extends JFrame implements KeyListener{
 	private static final long serialVersionUID = 1L;
 	public static Panel panel;
 	public static int debut = 0;
+	public static boolean key = false;
 	private IKeyPressed mv;
 		
 	public Frame(IKeyPressed mv) {
@@ -45,6 +46,13 @@ public class Frame extends JFrame implements KeyListener{
 				//Faire la méthode de comptage de point
 				
 			}
+			else if(panel.getXPerso() + 1 == panel.coordKeyx[panel.getXPerso() + 1][panel.getYPerso()] && panel.getYPerso() == panel.coordKeyy[panel.getXPerso() + 1][panel.getYPerso()]) {
+				
+				mv.mooveRight();
+				key = true;
+				System.out.println(key);
+				
+			}
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
 			if(panel.img[panel.getXPerso() - 1][panel.getYPerso()] == null || (panel.getXPerso() - 1 == panel.getXpersoImage() && panel.getYPerso() == panel.getYpersoImage())) {
@@ -56,6 +64,13 @@ public class Frame extends JFrame implements KeyListener{
 				
 				mv.mooveLeft();
 				//Faire la méthode de comptage de point
+				
+			}
+			else if(panel.getXPerso() - 1 == panel.coordKeyx[panel.getXPerso() - 1][panel.getYPerso()] && panel.getYPerso() == panel.coordKeyy[panel.getXPerso() - 1][panel.getYPerso()]) {
+				
+				mv.mooveLeft();
+				key = true;
+				System.out.println(key);
 				
 			}
 		}
@@ -71,6 +86,13 @@ public class Frame extends JFrame implements KeyListener{
 				//Faire la méthode de comptage de point
 				
 			}
+			else if(panel.getYPerso() == panel.coordKeyx[panel.getXPerso()][panel.getYPerso() - 1] && panel.getYPerso() + 1 == panel.coordKeyy[panel.getXPerso()][panel.getYPerso() - 1]) {
+				
+				mv.mooveUp();
+				key = true;
+				System.out.println(key);
+				
+			}
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_DOWN) {
 			if(panel.img[panel.getXPerso()][panel.getYPerso() + 1] == null || (panel.getXPerso() == panel.getXpersoImage() && panel.getYPerso() + 1 == panel.getYpersoImage())) {
@@ -82,6 +104,13 @@ public class Frame extends JFrame implements KeyListener{
 				
 				mv.mooveDown();
 				//Faire la méthode de comptage de point
+				
+			}
+			else if(panel.getXPerso() == panel.coordKeyx[panel.getXPerso()][panel.getYPerso() + 1] && panel.getYPerso() + 1 == panel.coordKeyy[panel.getXPerso()][panel.getYPerso() + 1]) {
+				
+				mv.mooveDown();
+				key = true;
+				System.out.println(key);
 				
 			}
 		}
