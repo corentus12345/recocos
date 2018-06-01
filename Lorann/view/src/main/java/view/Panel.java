@@ -33,10 +33,12 @@ public class Panel extends JPanel{
 	public void paintComponent(Graphics g) {
 		BufferedImage fond;
 		BufferedImage square;
+		BufferedImage end;
 		try {
 			
 			fond = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\fond.png"));
 			square = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
+			end = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\GameOver.png"));
 			g.drawImage(fond, 0, 0, null);
 			
 			if(Frame.debut == 1) {
@@ -54,6 +56,12 @@ public class Panel extends JPanel{
 						}
 					}
 				}
+			}
+			else if(Frame.debut == 2) {
+				
+				g.drawImage(fond, 0, 0, null);
+				g.drawImage(end, 0, 0, null);
+				
 			}
 			if(Frame.key) {
 				
