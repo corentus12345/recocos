@@ -8,7 +8,7 @@ public class KeyPressed implements IKeyPressed{
 	private MooveLorann mv = new MooveLorann();
 	
 	@Override
-	public void right(int level, IController control) {
+	public void right(IController control) {
 		if((Frame.panel.getXPerso() + 1 == Frame.panel.coordEmptyx[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordEmptyy[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()]) || (Frame.panel.getXPerso() + 1 == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveRight();
@@ -29,13 +29,13 @@ public class KeyPressed implements IKeyPressed{
 		else if(Frame.panel.getXPerso() + 1 == Frame.panel.coordDoorx[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordDoory[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()]) {
 			
 			mv.mooveRight();
-			new VerificationDoor(level, control);
+			new VerificationDoor(control);
 			
 		}
 	}
 
 	@Override
-	public void left(int level, IController control) {
+	public void left(IController control) {
 		if((Frame.panel.getXPerso() - 1 == Frame.panel.coordEmptyx[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordEmptyy[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()]) || (Frame.panel.getXPerso() - 1 == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveLeft();
@@ -56,13 +56,13 @@ public class KeyPressed implements IKeyPressed{
 		else if(Frame.panel.getXPerso() - 1 == Frame.panel.coordDoorx[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordDoory[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()]) {
 			
 			mv.mooveLeft();
-			new VerificationDoor(level, control);
+			new VerificationDoor(control);
 			
 		}
 	}
 
 	@Override
-	public void up(int level, IController control) {
+	public void up(IController control) {
 		if((Frame.panel.getYPerso() - 1 == Frame.panel.coordEmptyy[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getXPerso() == Frame.panel.coordEmptyx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) || (Frame.panel.getXPerso() == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() - 1 == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveUp();
@@ -83,13 +83,13 @@ public class KeyPressed implements IKeyPressed{
 		else if(Frame.panel.getYPerso() - 1 == Frame.panel.coordDoory[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getXPerso() == Frame.panel.coordDoorx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) {
 			
 			mv.mooveUp();
-			new VerificationDoor(level, control);
+			new VerificationDoor(control);
 			
 		}
 	}
 
 	@Override
-	public void down(int level, IController control) {
+	public void down(IController control) {
 		if((Frame.panel.getYPerso() + 1 == Frame.panel.coordEmptyy[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] && Frame.panel.getXPerso() == Frame.panel.coordEmptyx[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1]) || (Frame.panel.getXPerso() == Frame.panel.getXpersoImage() && Frame.panel.getYPerso() + 1 == Frame.panel.getYpersoImage())) {
 			
 			mv.mooveDown();			
@@ -110,7 +110,7 @@ public class KeyPressed implements IKeyPressed{
 		else if(Frame.panel.getYPerso() + 1 == Frame.panel.coordDoory[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] && Frame.panel.getXPerso() == Frame.panel.coordDoorx[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1]) {
 			
 			mv.mooveDown();
-			new VerificationDoor(level, control);
+			new VerificationDoor(control);
 			
 		}
 	}

@@ -18,7 +18,7 @@ public class Controller{
 		level.setLevel(sc.nextInt());
 		
 		CreateBDD bdd = new CreateBDD();
-		Frame frame = new Frame(new KeyPressed(), level.getLevel(), new Level());
+		Frame frame = new Frame(new KeyPressed(), level);
 		HaveBDD map = new HaveBDD(level.getLevel());
 	}
 }

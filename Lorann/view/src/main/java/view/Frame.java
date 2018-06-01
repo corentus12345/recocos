@@ -15,12 +15,10 @@ public class Frame extends JFrame implements KeyListener{
 	public static int debut = 0;
 	public static boolean key = false;
 	private IKeyPressed mv;
-	private int level;
 	private IController control;
 		
-	public Frame(IKeyPressed mv, int level, IController control) {
+	public Frame(IKeyPressed mv, IController control) {
 		this.mv = mv;
-		this.level = level;
 		this.control = control;
 		
 		this.setTitle("Lorann");
@@ -41,22 +39,22 @@ public class Frame extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
 			
-			mv.right(level, control);
+			mv.right(control);
 			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
 			
-			mv.left(level, control);
+			mv.left(control);
 			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_UP) {
 			
-			mv.up(level, control);
+			mv.up(control);
 			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_DOWN) {
 			
-			mv.down(level, control);
+			mv.down(control);
 			
 		}
 		panel.repaint();

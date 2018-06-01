@@ -7,18 +7,18 @@ public class VerificationDoor{
 	
 	private IController control;
 	
-	public VerificationDoor(int level, IController control) {
+	public VerificationDoor(IController control) {
 		this.control = control;
 		
 		if(Frame.key) {
-			doorOpen(level);
+			doorOpen();
 		}
 		else {
 			doorClose();
 		}
 	}
 	
-	public void doorOpen(int level) {
+	public void doorOpen() {
 		
 		control.setLevel(control.getLevel() + 1);
 
