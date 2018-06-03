@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import contract.IMooveIA;
+
 public class Panel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public BufferedImage img[][] = new BufferedImage[22][17];
@@ -25,9 +27,10 @@ public class Panel extends JPanel{
 	private int yPersoImage;
 	private int xKeyImage;
 	private int yKeyImage;
+	private IMooveIA mvIA;
 	
-	public Panel() {
-
+	public Panel(IMooveIA mvIA) {
+		this.mvIA = mvIA;
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -78,6 +81,10 @@ public class Panel extends JPanel{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		mvIA.moove();
+		
+		repaint();
 	}
 	
 	public void setXPerso(int xPerso) {

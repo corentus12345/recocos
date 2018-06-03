@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 import contract.IController;
 import contract.IKeyPressed;
+import contract.IMooveIA;
 
 public class Frame extends JFrame implements KeyListener{
 
@@ -16,16 +17,19 @@ public class Frame extends JFrame implements KeyListener{
 	public static boolean key = false;
 	private IKeyPressed mv;
 	private IController control;
+	@SuppressWarnings("unused")
+	private IMooveIA mvIA;
 		
-	public Frame(IKeyPressed mv, IController control) {
+	public Frame(IKeyPressed mv, IController control, IMooveIA mvIA) {
 		this.mv = mv;
 		this.control = control;
+		this.mvIA = mvIA;
 		
 		this.setTitle("Lorann");
 		this.setSize(32*22 + 20, 32*18 + 10);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
-		panel = new Panel();
+		panel = new Panel(mvIA);
 		
 		setFocusable(true);
 	    addKeyListener(this);
