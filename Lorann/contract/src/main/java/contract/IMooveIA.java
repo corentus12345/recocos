@@ -1,7 +1,7 @@
 package contract;
 
-public abstract interface IMooveIA {
-	
-	public void moove();
+public abstract interface IMooveIA{
+
+	public void mooveThread();
 	
 }

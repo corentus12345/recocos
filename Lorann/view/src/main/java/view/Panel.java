@@ -21,6 +21,8 @@ public class Panel extends JPanel{
 	public int coordDoory[][] = new int[22][17];
 	public int coordEmptyx[][] = new int[22][17];
 	public int coordEmptyy[][] = new int[22][17];
+	public Integer coordGhostx[][] = new Integer[22][17];
+	public Integer coordGhosty[][] = new Integer[22][17];
 	private int xPerso;
 	private int yPerso;
 	private int xPersoImage;
@@ -28,6 +30,8 @@ public class Panel extends JPanel{
 	private int xKeyImage;
 	private int yKeyImage;
 	private IMooveIA mvIA;
+	private BufferedImage imgGhost;
+	private BufferedImage imgEmpty;
 	
 	public Panel(IMooveIA mvIA) {
 		this.mvIA = mvIA;
@@ -82,7 +86,7 @@ public class Panel extends JPanel{
 			e.printStackTrace();
 		}
 		
-		mvIA.moove();
+		mvIA.mooveThread();
 		
 		repaint();
 	}
@@ -133,5 +137,21 @@ public class Panel extends JPanel{
 	
 	public int getYKeyImage() {
 		return yKeyImage;
+	}
+	
+	public void setImgGhost(BufferedImage imgGhost) {
+		this.imgGhost = imgGhost;
+	}
+	
+	public BufferedImage getImgGhost() {
+		return imgGhost;
+	}
+	
+	public void setImgEmpty(BufferedImage imgEmpty) {
+		this.imgEmpty = imgEmpty;
+	}
+	
+	public BufferedImage getImgEmpty() {
+		return imgEmpty;
 	}
 }

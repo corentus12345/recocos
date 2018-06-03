@@ -4,7 +4,10 @@ import contract.IMooveIA;
 
 public class MooveIA implements IMooveIA{
 
-	public void moove() {
+	@Override
+	public void mooveThread() {
+		
+		new Thread(new ThreadIA()).start();
 		
 	}
 }
