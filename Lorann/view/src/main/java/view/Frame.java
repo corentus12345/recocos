@@ -12,7 +12,7 @@ public class Frame extends JFrame implements KeyListener{
 
 	private static final long serialVersionUID = 1L;
 	public static Panel panel;
-	public static int debut = 0;
+	public static int debut = -1;
 	public static boolean key = false;
 	private IKeyPressed mv;
 	private IController control;

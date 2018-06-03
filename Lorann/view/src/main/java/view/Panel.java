@@ -34,11 +34,13 @@ public class Panel extends JPanel{
 		BufferedImage fond;
 		BufferedImage square;
 		BufferedImage end;
+		BufferedImage victory;
 		try {
 			
 			fond = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\fond.png"));
 			square = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
 			end = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\GameOver.png"));
+			victory = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\victoire.jpg"));
 			g.drawImage(fond, 0, 0, null);
 			
 			if(Frame.debut == 1) {
@@ -62,7 +64,12 @@ public class Panel extends JPanel{
 				g.drawImage(end, 0, 0, null);
 				
 			}
-			if(Frame.key) {
+			else if(Frame.debut == 0) {
+				
+				g.drawImage(victory, 0, 0, null);
+				
+			}
+			if(Frame.key && Frame.debut != 0) {
 				
 				g.drawImage(square, getXKeyImage() * 32, getYKeyImage() * 32, null);
 				g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);

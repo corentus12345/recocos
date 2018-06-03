@@ -11,8 +11,13 @@ public class Level implements IController{
 	public void setLevel(int level) {
 		this.level = level;
 		if(Frame.debut == 1) {
-			new CleanBoard();
-			new HaveBDD(getLevel());
+			if(getLevel() <= 5) {
+				new CleanBoard();
+				new HaveBDD(getLevel());
+			}
+			else {
+				Frame.debut = 0;
+			}
 		}
 	}
 	
