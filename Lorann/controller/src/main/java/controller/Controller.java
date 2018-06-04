@@ -21,7 +21,7 @@ public class Controller{
 	@SuppressWarnings("unused")
 	public Controller() {
 		sc = new Scanner(System.in);
-		System.out.println("Par quel niveau voulez-vous commencer (1 ï¿½ 5) ?");
+		System.out.println("Par quel niveau voulez-vous commencer (1 à 5) ?");
 		level.setLevel(sc.nextInt());
 		
 		CreateBDD bdd = new CreateBDD();

@@ -32,8 +32,6 @@ public class Panel extends JPanel{
 	private int xKeyImage;
 	private int yKeyImage;
 	private IMooveIA mvIA;
-	private BufferedImage imgGhost;
-	private BufferedImage imgEmpty;
 	
 	public Panel(IMooveIA mvIA) {
 		this.mvIA = mvIA;
