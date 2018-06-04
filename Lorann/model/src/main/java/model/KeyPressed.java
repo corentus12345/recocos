@@ -137,7 +137,7 @@ public class KeyPressed implements IKeyPressed{
 	
 	public void throwPower() {
 		
-		new LancerPower();
+		new ThrowPower();
 		
 	}
 

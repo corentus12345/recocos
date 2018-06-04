@@ -61,6 +61,9 @@ public class Frame extends JFrame implements KeyListener{
 			mv.down(control);
 			
 		}
+		if(evt.getKeyCode() == KeyEvent.VK_T) {
+			mv.throwPower();
+		}
 		panel.repaint();
 	}
 
