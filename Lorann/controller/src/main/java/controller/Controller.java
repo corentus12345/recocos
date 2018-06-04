@@ -5,6 +5,7 @@ import java.util.Scanner;
 import BDD.CreateBDD;
 import BDD.HaveBDD;
 import model.KeyPressed;
+import model.MooveIA;
 import view.Frame;
 
 public class Controller{
@@ -18,7 +19,7 @@ public class Controller{
 		level.setLevel(sc.nextInt());
 		
 		CreateBDD bdd = new CreateBDD();
-		Frame frame = new Frame(new KeyPressed(), level);
+		Frame frame = new Frame(new KeyPressed(), level, new MooveIA());
 		HaveBDD map = new HaveBDD(level.getLevel());
 	}
 }
