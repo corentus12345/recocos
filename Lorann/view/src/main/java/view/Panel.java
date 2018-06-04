@@ -32,7 +32,9 @@ public class Panel extends JPanel{
 	private int xKeyImage;
 	private int yKeyImage;
 	private IMooveIA mvIA;
-	
+	private int xPower;
+	private int yPower;
+
 	public Panel(IMooveIA mvIA) {
 		this.mvIA = mvIA;
 	}
@@ -80,6 +82,18 @@ public class Panel extends JPanel{
 				
 				g.drawImage(square, getXKeyImage() * 32, getYKeyImage() * 32, null);
 				g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
+				
+			}
+			if(Frame.power && Frame.debut == 1) {
+				
+				g.drawImage(img[getxPower()][getyPower()], getxPower() * 32, getyPower() * 32, null);
+				if(coordGhostx[getxPower()][getyPower()] != null && getxPower() == coordGhostx[getxPower()][getyPower()] && getyPower() == coordGhosty[getxPower()][getyPower()]) {
+					
+					img[getxPower()][getyPower()] = null;
+					Frame.panel.coordGhostx[getxPower()][getyPower()] = null;
+					Frame.panel.coordGhosty[getxPower()][getyPower()] = null;
+					
+				}
 				
 			}
 		} catch (IOException e) {
@@ -149,4 +163,21 @@ public class Panel extends JPanel{
 	public int getYKeyImage() {
 		return yKeyImage;
 	}
+	
+	public int getyPower() {
+		return yPower;
+	}
+
+	public void setyPower(int yPower) {
+		this.yPower = yPower;
+	}
+	
+	public int getxPower() {
+		return xPower;
+	}
+
+	public void setxPower(int xPower) {
+		this.xPower = xPower;
+	}
+	
 }

@@ -15,10 +15,12 @@ public class Frame extends JFrame implements KeyListener{
 	public static Panel panel;
 	public static int debut = -1;
 	public static boolean key = false;
+	public static String direction;
 	private IKeyPressed mv;
 	private IController control;
 	@SuppressWarnings("unused")
 	private IMooveIA mvIA;
+	public static boolean power = false;
 		
 	public Frame(IKeyPressed mv, IController control, IMooveIA mvIA) {
 		this.mv = mv;
@@ -43,21 +45,25 @@ public class Frame extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
 			
+			direction = "RIGHT";
 			mv.right(control);
 			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_LEFT) {
 			
+			direction = "LEFT";
 			mv.left(control);
 			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_UP) {
 			
+			direction = "UP";
 			mv.up(control);
 			
 		}
 		if(evt.getKeyCode() == KeyEvent.VK_DOWN) {
 			
+			direction = "DOWN";
 			mv.down(control);
 			
 		}

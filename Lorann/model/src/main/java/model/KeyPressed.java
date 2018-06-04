@@ -137,7 +137,7 @@ public class KeyPressed implements IKeyPressed{
 	
 	public void throwPower() {
 		
-		new ThrowPower();
+		new Thread(new ThrowPower()).start();
 		
 	}
 
