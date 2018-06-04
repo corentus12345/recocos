@@ -23,6 +23,8 @@ public class Panel extends JPanel{
 	public int coordEmptyy[][] = new int[22][17];
 	public Integer coordGhostx[][] = new Integer[22][17];
 	public Integer coordGhosty[][] = new Integer[22][17];
+	public Integer coordWallHx[][] = new Integer[22][17];
+	public Integer coordWallHy[][] = new Integer[22][17];
 	private int xPerso;
 	private int yPerso;
 	private int xPersoImage;
