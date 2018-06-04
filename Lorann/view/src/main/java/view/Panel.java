@@ -140,20 +140,4 @@ public class Panel extends JPanel{
 	public int getYKeyImage() {
 		return yKeyImage;
 	}
-	
-	public void setImgGhost(BufferedImage imgGhost) {
-		this.imgGhost = imgGhost;
-	}
-	
-	public BufferedImage getImgGhost() {
-		return imgGhost;
-	}
-	
-	public void setImgEmpty(BufferedImage imgEmpty) {
-		this.imgEmpty = imgEmpty;
-	}
-	
-	public BufferedImage getImgEmpty() {
-		return imgEmpty;
-	}
 }
