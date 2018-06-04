@@ -8,14 +8,14 @@ public class ThreadIA implements Runnable{
 
 	@Override
 	public void run() {
-		
+		try {
 		for(int x = 0; x < 21; x++) {
 			
 			for(int y = 0; y < 16; y++) {
-
+				
 				if(Frame.panel.coordGhostx[x][y] != null && Frame.panel.coordGhosty[x][y] != null) {
-					
-					if(Frame.panel.getXPerso() < Frame.panel.coordGhostx[x][y] && x - 1 == Frame.panel.coordEmptyx[x - 1][y] && Frame.panel.getXPerso() != 0) {
+						Thread.sleep(1000);
+					if(Frame.panel.coordGhostx[x][y] != null  && Frame.panel.getXPerso() < Frame.panel.coordGhostx[x][y] && x - 1 == Frame.panel.coordEmptyx[x - 1][y] && Frame.panel.getXPerso() != 0) {
 						
 						Frame.panel.coordGhostx[x - 1][y] = x - 1;
 						Frame.panel.coordGhosty[x - 1][y] = y;
@@ -93,6 +93,10 @@ public class ThreadIA implements Runnable{
 					}
 				}
 			}
+		}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
