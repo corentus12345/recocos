@@ -1,10 +1,12 @@
 package BDD;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,7 +26,7 @@ public class CreateBDD {
 				Statement stmt = cnx.createStatement();
 				if(level == 1) {
 					
-					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level1.txt");
+					InputStream is = new FileInputStream(new File(getClass().getResource("/files/Level1.txt").toURI()));
 					InputStreamReader lire = new InputStreamReader(is);
 					BufferedReader buff = new BufferedReader(lire);
 					String ligne;
@@ -38,7 +40,7 @@ public class CreateBDD {
 					
 				}
 				else if(level == 2) {
-					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level2.txt");
+					InputStream is = new FileInputStream(new File(getClass().getResource("/files/Level2.txt").toURI()));
 					InputStreamReader lire = new InputStreamReader(is);
 					BufferedReader buff = new BufferedReader(lire);
 					String ligne;
@@ -49,7 +51,7 @@ public class CreateBDD {
 					buff.close();
 				}
 				else if(level == 3) {
-					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level3.txt");
+					InputStream is = new FileInputStream(new File(getClass().getResource("/files/Level3.txt").toURI()));
 					InputStreamReader lire = new InputStreamReader(is);
 					BufferedReader buff = new BufferedReader(lire);
 					String ligne;
@@ -60,7 +62,7 @@ public class CreateBDD {
 					buff.close();
 				}
 				else if(level == 4) {
-					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level4.txt");
+					InputStream is = new FileInputStream(new File(getClass().getResource("/files/Level4.txt").toURI()));
 					InputStreamReader lire = new InputStreamReader(is);
 					BufferedReader buff = new BufferedReader(lire);
 					String ligne;
@@ -71,7 +73,7 @@ public class CreateBDD {
 					buff.close();
 				}
 				else if(level == 5) {
-					InputStream is = new FileInputStream("C:/Users/Corentin/Desktop/CesiEXIA/Java/Level/Level5.txt");
+					InputStream is = new FileInputStream(new File(getClass().getResource("/files/Level5.txt").toURI()));
 					InputStreamReader lire = new InputStreamReader(is);
 					BufferedReader buff = new BufferedReader(lire);
 					String ligne;
@@ -135,7 +137,7 @@ public class CreateBDD {
 				stmt.close();
 				cnx.close();
 				list.clear();
-			} catch (ClassNotFoundException | SQLException | IOException e) {
+			} catch (ClassNotFoundException | SQLException | IOException | URISyntaxException e) {
 				e.printStackTrace();
 			}
 		}

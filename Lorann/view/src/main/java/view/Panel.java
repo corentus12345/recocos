@@ -94,10 +94,11 @@ public class Panel extends JPanel{
 				g.drawImage(img[getxPower()][getyPower()], getxPower() * 32, getyPower() * 32, null);
 				
 				if(coordGhostx[getxPower()][getyPower()] != null && getxPower() == coordGhostx[getxPower()][getyPower()] && getyPower() == coordGhosty[getxPower()][getyPower()]) {
-						
-					img[coordGhostx[getxPower()][getyPower()]][coordGhosty[getxPower()][getyPower()]] = null;
+					
 					Frame.panel.coordGhostx[getxPower()][getyPower()] = null;
 					Frame.panel.coordGhosty[getxPower()][getyPower()] = null;
+					img[getxPower()][getyPower()] = null;
+					
 				}
 				
 			}
