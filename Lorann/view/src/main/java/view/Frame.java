@@ -7,29 +7,25 @@ import javax.swing.JFrame;
 
 import contract.IController;
 import contract.IKeyPressed;
-import contract.IMooveIA;
 
 public class Frame extends JFrame implements KeyListener{
 
 	private static final long serialVersionUID = 1L;
 	public static Panel panel;
-	public static int debut = -1;
+	public static int debut = 0;
 	public static boolean key = false;
 	private IKeyPressed mv;
 	private IController control;
-	@SuppressWarnings("unused")
-	private IMooveIA mvIA;
 		
-	public Frame(IKeyPressed mv, IController control, IMooveIA mvIA) {
+	public Frame(IKeyPressed mv, IController control) {
 		this.mv = mv;
 		this.control = control;
-		this.mvIA = mvIA;
 		
 		this.setTitle("Lorann");
 		this.setSize(32*22 + 20, 32*18 + 10);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
-		panel = new Panel(mvIA);
+		panel = new Panel();
 		
 		setFocusable(true);
 	    addKeyListener(this);

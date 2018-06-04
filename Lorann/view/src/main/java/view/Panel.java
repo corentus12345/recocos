@@ -8,8 +8,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import contract.IMooveIA;
-
 public class Panel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public BufferedImage img[][] = new BufferedImage[22][17];
@@ -21,33 +19,26 @@ public class Panel extends JPanel{
 	public int coordDoory[][] = new int[22][17];
 	public int coordEmptyx[][] = new int[22][17];
 	public int coordEmptyy[][] = new int[22][17];
-	public Integer coordGhostx[][] = new Integer[22][17];
-	public Integer coordGhosty[][] = new Integer[22][17];
 	private int xPerso;
 	private int yPerso;
 	private int xPersoImage;
 	private int yPersoImage;
 	private int xKeyImage;
 	private int yKeyImage;
-	private IMooveIA mvIA;
-	private BufferedImage imgGhost;
-	private BufferedImage imgEmpty;
 	
-	public Panel(IMooveIA mvIA) {
-		this.mvIA = mvIA;
+	public Panel() {
+
 	}
 	
 	public void paintComponent(Graphics g) {
 		BufferedImage fond;
 		BufferedImage square;
 		BufferedImage end;
-		BufferedImage victory;
 		try {
 			
 			fond = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\fond.png"));
 			square = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
 			end = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\GameOver.png"));
-			victory = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\victoire.jpg"));
 			g.drawImage(fond, 0, 0, null);
 			
 			if(Frame.debut == 1) {
@@ -71,12 +62,7 @@ public class Panel extends JPanel{
 				g.drawImage(end, 0, 0, null);
 				
 			}
-			else if(Frame.debut == 0) {
-				
-				g.drawImage(victory, 0, 0, null);
-				
-			}
-			if(Frame.key && Frame.debut != 0) {
+			if(Frame.key) {
 				
 				g.drawImage(square, getXKeyImage() * 32, getYKeyImage() * 32, null);
 				g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
@@ -85,10 +71,6 @@ public class Panel extends JPanel{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		mvIA.mooveThread();
-		
-		repaint();
 	}
 	
 	public void setXPerso(int xPerso) {
@@ -137,21 +119,5 @@ public class Panel extends JPanel{
 	
 	public int getYKeyImage() {
 		return yKeyImage;
-	}
-	
-	public void setImgGhost(BufferedImage imgGhost) {
-		this.imgGhost = imgGhost;
-	}
-	
-	public BufferedImage getImgGhost() {
-		return imgGhost;
-	}
-	
-	public void setImgEmpty(BufferedImage imgEmpty) {
-		this.imgEmpty = imgEmpty;
-	}
-	
-	public BufferedImage getImgEmpty() {
-		return imgEmpty;
 	}
 }
