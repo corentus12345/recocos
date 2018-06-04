@@ -27,12 +27,6 @@ public class ThrowPower implements Runnable {
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setxPower(Frame.panel.getxPower() + 1);
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
-					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
-						
-						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-					}
 					Thread.sleep(300);
 					
 				}
@@ -56,12 +50,6 @@ public class ThrowPower implements Runnable {
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setxPower(Frame.panel.getxPower() - 1);
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
-					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
-						
-						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-					}
 					Thread.sleep(300);
 					
 				}
@@ -86,12 +74,6 @@ public class ThrowPower implements Runnable {
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setyPower(Frame.panel.getyPower() - 1);
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
-					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
-						
-						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-					}
 					Thread.sleep(300);
 					
 				}
@@ -109,19 +91,13 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
-				while(Frame.panel.getyPower() + 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() + 1]) {
+				while(Frame.panel.getyPower() + 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() + 1] && Frame.panel.getyPower() <= 15) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setyPower(Frame.panel.getyPower() + 1);
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
-					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
-						
-						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
-					}
 					Thread.sleep(300);
 					
 				}

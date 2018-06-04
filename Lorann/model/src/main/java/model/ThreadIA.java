@@ -28,6 +28,13 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyx[x - 1][y] = -1;
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyy[x - 1][y] = -1;
+						if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+							
+							Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							
+						}
 						
 					}
 					else if(Frame.panel.coordGhostx[x][y] != null && Frame.panel.getXPerso() > Frame.panel.coordGhostx[x][y] && (x + 1 == Frame.panel.coordEmptyx[x + 1][y]  || x + 1 == Frame.panel.coordItemx[x + 1][y]) && Frame.panel.getXPerso() != 0){
@@ -45,6 +52,13 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyx[x + 1][y] = -1;
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyy[x + 1][y] = -1;
+						if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+							
+							Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							
+						}
 
 					}
 					else if(Frame.panel.coordGhosty[x][y] != null && Frame.panel.getYPerso() < Frame.panel.coordGhosty[x][y] && (y - 1 == Frame.panel.coordEmptyy[x][y - 1]  || y - 1 == Frame.panel.coordItemy[x][y - 1]) && Frame.panel.getYPerso() != 0) {
@@ -62,6 +76,13 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyx[x][y - 1] = -1;
 						Frame.panel.coordEmptyy[x][y - 1] = -1;
+						if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+							
+							Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							
+						}
 						
 					}
 					else if(Frame.panel.coordGhosty[x][y] != null && Frame.panel.getYPerso() > Frame.panel.coordGhosty[x][y] && (y + 1 == Frame.panel.coordEmptyy[x][y + 1]  || y + 1 == Frame.panel.coordItemy[x][y + 1]) && Frame.panel.getYPerso() != 0) {
@@ -79,6 +100,13 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyx[x][y + 1] = -1;
 						Frame.panel.coordEmptyy[x][y + 1] = -1;
+						if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+							
+							Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+							
+						}
 						
 					}
 				}
