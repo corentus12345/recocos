@@ -19,7 +19,7 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
-				while(Frame.panel.getxPower() + 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() + 1][Frame.panel.getyPower()]) {
+				while(Frame.panel.getxPower() + 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() + 1][Frame.panel.getyPower()] && Frame.panel.getxPower() <= 20) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
@@ -42,7 +42,7 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
-				while(Frame.panel.getxPower() - 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() - 1][Frame.panel.getyPower()]) {
+				while(Frame.panel.getxPower() - 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() - 1][Frame.panel.getyPower()] && Frame.panel.getxPower() >= 2) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
