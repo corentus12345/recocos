@@ -16,8 +16,6 @@ public class CleanBoard {
 				Frame.panel.coordItemy[x][y] = -1;
 				Frame.panel.coordKeyx[x][y] = -1;
 				Frame.panel.coordKeyy[x][y] = -1;
-				Frame.panel.coordGhostx[x][y] = null;
-				Frame.panel.coordGhosty[x][y] = null;
 				Frame.key = false;
 			}
 		}

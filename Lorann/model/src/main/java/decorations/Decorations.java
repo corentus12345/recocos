@@ -96,6 +96,7 @@ public class Decorations {
 		
 		try {
 			Frame.panel.img[x5][y5] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\monster_1.png"));
+			Frame.panel.setImgGhost(ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\monster_1.png")));
 			Frame.panel.coordGhostx[x5][y5] = x5;
 			Frame.panel.coordGhosty[x5][y5] = y5;
 		} catch (IOException e) {
@@ -155,6 +156,7 @@ public class Decorations {
 		
 		try {
 			Frame.panel.img[x9][y9] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
+			Frame.panel.setImgEmpty(ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png")));
 			Frame.panel.coordEmptyx[x9][y9] = x9;
 			Frame.panel.coordEmptyy[x9][y9] = y9;
 		} catch (IOException e) {

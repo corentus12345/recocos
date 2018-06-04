@@ -4,11 +4,7 @@ import BDD.HaveBDD;
 import contract.IController;
 import model.CleanBoard;
 import view.Frame;
-/**
- * 
- * @author corentin BOURGEY, corentin BRION
- *
- */
+
 public class Level implements IController{
 	private int level = 1;
 	
