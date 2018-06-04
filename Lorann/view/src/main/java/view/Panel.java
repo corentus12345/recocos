@@ -34,6 +34,8 @@ public class Panel extends JPanel{
 	private IMooveIA mvIA;
 	private int xPower;
 	private int yPower;
+	private BufferedImage imgGhost;
+	private BufferedImage imgSquare;
 
 	public Panel(IMooveIA mvIA) {
 		this.mvIA = mvIA;
@@ -67,6 +69,9 @@ public class Panel extends JPanel{
 						}
 					}
 				}
+				
+				mvIA.mooveThread();
+				
 			}
 			else if(Frame.debut == 2) {
 
@@ -87,32 +92,32 @@ public class Panel extends JPanel{
 			if(Frame.power && Frame.debut == 1) {
 				
 				g.drawImage(img[getxPower()][getyPower()], getxPower() * 32, getyPower() * 32, null);
+				
 				if(coordGhostx[getxPower()][getyPower()] != null && getxPower() == coordGhostx[getxPower()][getyPower()] && getyPower() == coordGhosty[getxPower()][getyPower()]) {
-					
-					img[getxPower()][getyPower()] = null;
+						
+					img[coordGhostx[getxPower()][getyPower()]][coordGhosty[getxPower()][getyPower()]] = null;
 					Frame.panel.coordGhostx[getxPower()][getyPower()] = null;
 					Frame.panel.coordGhosty[getxPower()][getyPower()] = null;
-					
 				}
 				
 			}
+
+			for(int y1 = 0; y1 < 17; y1++) {
+				
+				for(int x1 = 0; x1 < 22; x1++) {
+					
+					if(Frame.panel.coordGhosty[x1][y1] != null && (Frame.panel.coordGhosty[x1][y1] == Frame.panel.getYPerso() && Frame.panel.coordGhostx[x1][y1] == Frame.panel.getXPerso())) {
+						
+						Frame.debut = 2;
+						
+					}
+				}	
+			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		mvIA.mooveThread();
-		
-		for(int y1 = 0; y1 < 17; y1++) {
-			
-			for(int x1 = 0; x1 < 22; x1++) {
-				
-				if(Frame.panel.coordGhosty[x1][y1] != null && (Frame.panel.coordGhosty[x1][y1] == Frame.panel.getYPerso() && (Frame.panel.coordGhostx[x1][y1]) == Frame.panel.getXPerso())) {
-					
-					Frame.debut = 2;
-					
-				}
-			}	
-		}
 		repaint();
 	}
 	
@@ -178,6 +183,22 @@ public class Panel extends JPanel{
 
 	public void setxPower(int xPower) {
 		this.xPower = xPower;
+	}
+	
+	public BufferedImage getImgGhost() {
+		return imgGhost;
+	}
+
+	public void setImgGhost(BufferedImage imgGhost) {
+		this.imgGhost = imgGhost;
+	}
+	
+	public BufferedImage getImgSquare() {
+		return imgSquare;
+	}
+
+	public void setImgSquare(BufferedImage imgSquare) {
+		this.imgSquare = imgSquare;
 	}
 	
 }

@@ -73,7 +73,6 @@ public class ThrowPower implements Runnable {
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setyPower(Frame.panel.getyPower() - 1);
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
-					System.out.println(Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()]);
 					Thread.sleep(300);
 					
 				}
