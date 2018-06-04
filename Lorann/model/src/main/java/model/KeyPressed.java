@@ -32,6 +32,11 @@ public class KeyPressed implements IKeyPressed{
 			new VerificationDoor(control);
 			
 		}
+		else if(Frame.panel.coordGhostx[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()] != null && Frame.panel.getXPerso() + 1 == Frame.panel.coordGhostx[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordGhosty[Frame.panel.getXPerso() + 1][Frame.panel.getYPerso()]) {
+			
+			Frame.debut = 2;
+			
+		}
 	}
 
 	@Override
@@ -57,6 +62,11 @@ public class KeyPressed implements IKeyPressed{
 			
 			mv.mooveLeft();
 			new VerificationDoor(control);
+			
+		}
+		else if(Frame.panel.coordGhostx[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] != null && Frame.panel.getXPerso() - 1 == Frame.panel.coordGhostx[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()] && Frame.panel.getYPerso() == Frame.panel.coordGhosty[Frame.panel.getXPerso() - 1][Frame.panel.getYPerso()]) {
+			
+			Frame.debut = 2;
 			
 		}
 	}
@@ -86,6 +96,11 @@ public class KeyPressed implements IKeyPressed{
 			new VerificationDoor(control);
 			
 		}
+		else if(Frame.panel.coordGhosty[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] != null && Frame.panel.getYPerso() - 1 == Frame.panel.coordGhosty[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1] && Frame.panel.getXPerso() == Frame.panel.coordGhostx[Frame.panel.getXPerso()][Frame.panel.getYPerso() - 1]) {
+			
+			Frame.debut = 2;
+			
+		}
 	}
 
 	@Override
@@ -113,6 +128,17 @@ public class KeyPressed implements IKeyPressed{
 			new VerificationDoor(control);
 			
 		}
+		else if(Frame.panel.coordGhosty[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] != null && Frame.panel.getYPerso() + 1 == Frame.panel.coordGhosty[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1] && Frame.panel.getXPerso() == Frame.panel.coordGhostx[Frame.panel.getXPerso()][Frame.panel.getYPerso() + 1]) {
+			
+			Frame.debut = 2;
+			
+		}
+	}
+	
+	public void throwPower() {
+		
+		new LancerPower();
+		
 	}
 
 }

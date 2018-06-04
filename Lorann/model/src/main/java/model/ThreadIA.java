@@ -12,11 +12,11 @@ public class ThreadIA implements Runnable{
 		for(int x = 0; x < 21; x++) {
 			
 			for(int y = 0; y < 16; y++) {
-				
+
 				if(Frame.panel.coordGhostx[x][y] != null && Frame.panel.coordGhosty[x][y] != null) {
-						Thread.sleep(1000);
-					if(Frame.panel.coordGhostx[x][y] != null  && Frame.panel.getXPerso() < Frame.panel.coordGhostx[x][y] && x - 1 == Frame.panel.coordEmptyx[x - 1][y] && Frame.panel.getXPerso() != 0) {
-						
+
+					if(Frame.panel.coordGhostx[x][y] != null  && Frame.panel.getXPerso() < Frame.panel.coordGhostx[x][y] && (x - 1 == Frame.panel.coordEmptyx[x - 1][y] || x - 1 == Frame.panel.coordItemx[x - 1][y]) && Frame.panel.getXPerso() != 0) {
+
 						Frame.panel.coordGhostx[x - 1][y] = x - 1;
 						Frame.panel.coordGhosty[x - 1][y] = y;
 						
@@ -32,9 +32,10 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyx[x - 1][y] = -1;
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyy[x - 1][y] = -1;
+						Thread.sleep(1500);
 						
 					}
-					else if(Frame.panel.coordGhostx[x][y] != null && Frame.panel.getXPerso() > Frame.panel.coordGhostx[x][y] && x + 1 == Frame.panel.coordEmptyx[x + 1][y] && Frame.panel.getXPerso() != 0){
+					else if(Frame.panel.coordGhostx[x][y] != null && Frame.panel.getXPerso() > Frame.panel.coordGhostx[x][y] && (x + 1 == Frame.panel.coordEmptyx[x + 1][y]  || x + 1 == Frame.panel.coordItemx[x + 1][y]) && Frame.panel.getXPerso() != 0){
 
 						Frame.panel.coordGhostx[x + 1][y] = x + 1;
 						Frame.panel.coordGhosty[x + 1][y] = y;
@@ -51,9 +52,10 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyx[x + 1][y] = -1;
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyy[x + 1][y] = -1;
+						Thread.sleep(1500);
 
 					}
-					else if(Frame.panel.coordGhosty[x][y] != null && Frame.panel.getYPerso() < Frame.panel.coordGhosty[x][y] && y - 1 == Frame.panel.coordEmptyy[x][y - 1] && Frame.panel.getYPerso() != 0) {
+					else if(Frame.panel.coordGhosty[x][y] != null && Frame.panel.getYPerso() < Frame.panel.coordGhosty[x][y] && (y - 1 == Frame.panel.coordEmptyy[x][y - 1]  || y - 1 == Frame.panel.coordItemy[x][y - 1]) && Frame.panel.getYPerso() != 0) {
 						
 						Frame.panel.coordGhostx[x][y - 1] = x;
 						Frame.panel.coordGhosty[x][y - 1] = y - 1;
@@ -70,9 +72,10 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyx[x][y - 1] = -1;
 						Frame.panel.coordEmptyy[x][y - 1] = -1;
+						Thread.sleep(1500);
 						
 					}
-					else if(Frame.panel.coordGhosty[x][y] != null && Frame.panel.getYPerso() > Frame.panel.coordGhosty[x][y] && y + 1 == Frame.panel.coordEmptyy[x][y + 1] && Frame.panel.getYPerso() != 0) {
+					else if(Frame.panel.coordGhosty[x][y] != null && Frame.panel.getYPerso() > Frame.panel.coordGhosty[x][y] && (y + 1 == Frame.panel.coordEmptyy[x][y + 1]  || y + 1 == Frame.panel.coordItemy[x][y + 1]) && Frame.panel.getYPerso() != 0) {
 						
 						Frame.panel.coordGhostx[x][y + 1] = x;
 						Frame.panel.coordGhosty[x][y + 1] = y + 1;
@@ -89,13 +92,13 @@ public class ThreadIA implements Runnable{
 						Frame.panel.coordEmptyy[x][y] = y;
 						Frame.panel.coordEmptyx[x][y + 1] = -1;
 						Frame.panel.coordEmptyy[x][y + 1] = -1;
+						Thread.sleep(1500);
 						
 					}
 				}
 			}
 		}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

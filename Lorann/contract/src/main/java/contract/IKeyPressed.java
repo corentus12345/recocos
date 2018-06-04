@@ -25,4 +25,6 @@ public abstract interface IKeyPressed {
 	 * @param control
 	 */
 	public void down(IController control);
+	
+	public void throwPower();
 }

@@ -59,7 +59,7 @@ public class Panel extends JPanel{
 							
 						}
 						else{
-							
+
 							g.drawImage(img[x1][y1], x1 * 32, y1 *32, null);
 							
 						}
@@ -88,6 +88,17 @@ public class Panel extends JPanel{
 		
 		mvIA.mooveThread();
 		
+		for(int y1 = 0; y1 < 17; y1++) {
+			
+			for(int x1 = 0; x1 < 22; x1++) {
+				
+				if(Frame.panel.coordGhosty[x1][y1] != null && (Frame.panel.coordGhosty[x1][y1] == Frame.panel.getYPerso() && (Frame.panel.coordGhostx[x1][y1]) == Frame.panel.getXPerso())) {
+					
+					Frame.debut = 2;
+					
+				}
+			}	
+		}
 		repaint();
 	}
 	
