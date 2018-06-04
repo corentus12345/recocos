@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -36,6 +37,8 @@ public class Panel extends JPanel{
 	private int yPower;
 	private BufferedImage imgGhost;
 	private BufferedImage imgSquare;
+	private int xDoor;
+	private int yDoor;
 
 	public Panel(IMooveIA mvIA) {
 		this.mvIA = mvIA;
@@ -46,12 +49,14 @@ public class Panel extends JPanel{
 		BufferedImage square;
 		BufferedImage end;
 		BufferedImage victory;
+		BufferedImage openDoor;
 		try {
 			
-			fond = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\fond.png"));
-			square = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
-			end = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\GameOver.png"));
-			victory = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\victoire.jpg"));
+			fond = ImageIO.read(new File(getClass().getResource("/pictures/fond.png").toURI()));
+			square = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+			end = ImageIO.read(new File(getClass().getResource("/pictures/GameOver.png").toURI()));
+			victory = ImageIO.read(new File(getClass().getResource("/pictures/victoire.jpg").toURI()));
+			openDoor = ImageIO.read(new File(getClass().getResource("/pictures/gate_open.png").toURI()));
 			g.drawImage(fond, 0, 0, null);
 			
 			if(Frame.debut == 1) {
@@ -87,19 +92,21 @@ public class Panel extends JPanel{
 				
 				g.drawImage(square, getXKeyImage() * 32, getYKeyImage() * 32, null);
 				g.drawImage(img[getXpersoImage()][getYpersoImage()], getXPerso() * 32, getYPerso() * 32, null);
+				img[getxDoor()][getyDoor()] = openDoor;
+				g.drawImage(img[getxDoor()][getyDoor()], getxDoor() * 32, getyDoor() * 32, null);
 				
 			}
 			if(Frame.power && Frame.debut == 1) {
-				
-				g.drawImage(img[getxPower()][getyPower()], getxPower() * 32, getyPower() * 32, null);
-				
+									
 				if(coordGhostx[getxPower()][getyPower()] != null && getxPower() == coordGhostx[getxPower()][getyPower()] && getyPower() == coordGhosty[getxPower()][getyPower()]) {
 					
+					img[getxPower()][getyPower()] = null;
 					Frame.panel.coordGhostx[getxPower()][getyPower()] = null;
 					Frame.panel.coordGhosty[getxPower()][getyPower()] = null;
-					img[getxPower()][getyPower()] = null;
 					
 				}
+				
+				g.drawImage(img[getxPower()][getyPower()], getxPower() * 32, getyPower() * 32, null);
 				
 			}
 
@@ -115,7 +122,7 @@ public class Panel extends JPanel{
 				}	
 			}
 			
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 		
@@ -202,4 +209,19 @@ public class Panel extends JPanel{
 		this.imgSquare = imgSquare;
 	}
 	
+	public int getxDoor() {
+		return xDoor;
+	}
+
+	public void setxDoor(int xDoor) {
+		this.xDoor = xDoor;
+	}
+
+	public int getyDoor() {
+		return yDoor;
+	}
+
+	public void setyDoor(int yDoor) {
+		this.yDoor = yDoor;
+	}
 }

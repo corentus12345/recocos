@@ -2,6 +2,7 @@ package decorations;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 
@@ -45,8 +46,8 @@ public class Decorations {
 		int y = Integer.valueOf(t);
 		
 		try {
-			Frame.panel.img[x][y] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\horizontal_bone.png"));
-		} catch (IOException e) {
+			Frame.panel.img[x][y] = ImageIO.read(new File(getClass().getResource("/pictures/horizontal_bone.png").toURI()));
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}	
 	}
@@ -57,8 +58,8 @@ public class Decorations {
 		int y2 = Integer.valueOf(t2);
 		
 		try {
-			Frame.panel.img[x2][y2] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\vertical_bone.png"));
-		} catch (IOException e) {
+			Frame.panel.img[x2][y2] = ImageIO.read(new File(getClass().getResource("/pictures/vertical_bone.png").toURI()));
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -69,8 +70,8 @@ public class Decorations {
 		int y3 = Integer.valueOf(t3);
 		
 		try {
-			Frame.panel.img[x3][y3] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\bone.png"));
-		} catch (IOException e) {
+			Frame.panel.img[x3][y3] = ImageIO.read(new File(getClass().getResource("/pictures/bone.png").toURI()));
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -81,10 +82,12 @@ public class Decorations {
 		int y4 = Integer.valueOf(t4);
 		
 		try {
-			Frame.panel.img[x4][y4] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\gate_closed.png"));
+			Frame.panel.img[x4][y4] = ImageIO.read(new File(getClass().getResource("/pictures/gate_closed.png").toURI()));
+			Frame.panel.setxDoor(x4);
+			Frame.panel.setyDoor(y4);
 			Frame.panel.coordDoorx[x4][y4] = x4;
 			Frame.panel.coordDoory[x4][y4] = y4;
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -95,11 +98,11 @@ public class Decorations {
 		int y5 = Integer.valueOf(t5);
 		
 		try {
-			Frame.panel.img[x5][y5] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\monster_1.png"));
-			Frame.panel.setImgGhost(ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\monster_1.png")));
+			Frame.panel.img[x5][y5] = ImageIO.read(new File(getClass().getResource("/pictures/monster_1.png").toURI()));
+			Frame.panel.setImgGhost(ImageIO.read(new File(getClass().getResource("/pictures/monster_1.png").toURI())));
 			Frame.panel.coordGhostx[x5][y5] = x5;
 			Frame.panel.coordGhosty[x5][y5] = y5;
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -110,10 +113,10 @@ public class Decorations {
 		int y6 = Integer.valueOf(t6);
 		
 		try {
-			Frame.panel.img[x6][y6] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\purse.png"));
+			Frame.panel.img[x6][y6] = ImageIO.read(new File(getClass().getResource("/pictures/purse.png").toURI()));
 			Frame.panel.coordItemx[x6][y6] = x6;
 			Frame.panel.coordItemy[x6][y6] = y6;
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -124,12 +127,12 @@ public class Decorations {
 		int y7 = Integer.valueOf(t7);
 		
 		try {
-			Frame.panel.img[x7][y7] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\crystal_ball.png"));
+			Frame.panel.img[x7][y7] = ImageIO.read(new File(getClass().getResource("/pictures/crystal_ball.png").toURI()));
 			Frame.panel.coordKeyx[x7][y7] = x7;
 			Frame.panel.coordKeyy[x7][y7] = y7;
 			Frame.panel.setXKeyImage(x7);
 			Frame.panel.setYKeyImage(y7);
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -143,8 +146,8 @@ public class Decorations {
 		Frame.panel.setYpersoImage(Integer.valueOf(t8));
 		
 		try {
-			Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso()] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\lorann_r.png"));
-		} catch (IOException e) {
+			Frame.panel.img[Frame.panel.getXPerso()][Frame.panel.getYPerso()] = ImageIO.read(new File(getClass().getResource("/pictures/lorann_r.png").toURI()));
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
@@ -155,11 +158,11 @@ public class Decorations {
 		int y9 = Integer.valueOf(t9);
 		
 		try {
-			Frame.panel.img[x9][y9] = ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png"));
-			Frame.panel.setImgSquare(ImageIO.read(new File("C:\\Users\\Corentin\\Documents\\GitHub\\recocos\\sprite\\square.png")));
+			Frame.panel.img[x9][y9] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+			Frame.panel.setImgSquare(ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI())));
 			Frame.panel.coordEmptyx[x9][y9] = x9;
 			Frame.panel.coordEmptyy[x9][y9] = y9;
-		} catch (IOException e) {
+		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
