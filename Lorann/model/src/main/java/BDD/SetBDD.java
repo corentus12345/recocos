@@ -98,7 +98,6 @@ public class SetBDD {
 			}
 			
 			Frame.debut = 1;
-			new Thread(new Sound()).start();
 			Frame.panel.repaint();
 			
 		} catch (NumberFormatException e) {

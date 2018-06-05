@@ -4,6 +4,7 @@ import BDD.CreateBDD;
 import BDD.HaveBDD;
 import model.KeyPressed;
 import model.MooveIA;
+import model.Sound;
 import view.Frame;
 /**
  * 
@@ -21,6 +22,7 @@ public class Controller{
 		
 		CreateBDD bdd = new CreateBDD();
 		Frame frame = new Frame(new KeyPressed(), level, new MooveIA(), hbdd);
+		new Thread(new Sound()).start();
 		
 	}
 }
