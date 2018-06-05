@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"BDD"},{"l":"contract"},{"l":"controller"},{"l":"decorations"},{"l":"main"},{"l":"model"},{"l":"view"}]
