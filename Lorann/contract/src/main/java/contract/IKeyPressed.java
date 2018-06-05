@@ -1,7 +1,7 @@
 package contract;
 /**
  * 
- * @author corentin BOURGEY
+ * @author corentin BOURGEY, corentin BRION
  *
  */
 public abstract interface IKeyPressed {
@@ -25,6 +25,8 @@ public abstract interface IKeyPressed {
 	 * @param control
 	 */
 	public void down(IController control);
-	
+	/**
+	 * Lorann can shoot a power
+	 */
 	public void throwPower();
 }

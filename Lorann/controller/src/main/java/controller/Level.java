@@ -10,11 +10,11 @@ import view.Frame;
  *
  */
 public class Level implements IController{
-	private int level = 1;
+	private int level = 1; 
 	private HaveBDD hbdd = new HaveBDD();
 	
 	public void setLevel(int level) {
-		this.level = level;
+		this.level = level; 
 		if(Frame.debut == 1) {
 			if(getLevel() <= 5) {
 				new CleanBoard();

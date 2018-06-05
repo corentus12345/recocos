@@ -1,7 +1,7 @@
 package contract;
 /**
  * 
- * @author corentin BOURGEY
+ * @author corentin BOURGEY, corentin BRION
  *
  */
 public abstract interface IMooveIA{

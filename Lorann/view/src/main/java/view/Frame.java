@@ -16,7 +16,11 @@ import contract.IController;
 import contract.IHaveBDD;
 import contract.IKeyPressed;
 import contract.IMooveIA;
-
+/**
+ * 
+ * @author Corentin BOURGEY , corentin BRION
+ *
+ */
 public class Frame extends JFrame implements KeyListener{
 
 	private static final long serialVersionUID = 1L;
@@ -37,7 +41,13 @@ public class Frame extends JFrame implements KeyListener{
 	private JButton button4 = new JButton("Level 4");
 	private JButton button5 = new JButton("Level 5");
 	private JLabel label = new JLabel("Choose your level which you want to start !");
-		
+	/**
+	 * Create the screen and the button on the screen
+	 * @param mv
+	 * @param control
+	 * @param mvIA
+	 * @param hbdd
+	 */
 	public Frame(IKeyPressed mv, IController control, IMooveIA mvIA, IHaveBDD hbdd) {
 		this.mv = mv;
 		this.hbdd = hbdd;
@@ -154,8 +164,10 @@ public class Frame extends JFrame implements KeyListener{
 			
 		this.setVisible(true);
 	}
-
 	@Override
+	/**
+	 * add the control of Lorann
+	 */
 	public void keyPressed(KeyEvent evt) {
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
 			
@@ -188,11 +200,17 @@ public class Frame extends JFrame implements KeyListener{
 	}
 
 	@Override
+	/**
+	 * add the control of Lorann
+	 */
 	public void keyReleased(KeyEvent arg0) {
 		
 	}
 
 	@Override
+	/**
+	 * add the control of Lorann
+	 */
 	public void keyTyped(KeyEvent arg0) {
 		
 	}

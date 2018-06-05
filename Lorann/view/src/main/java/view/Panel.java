@@ -10,7 +10,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import contract.IMooveIA;
-
+/**
+ * 
+ * @author Corentin BOURGEY
+ *
+ */
 public class Panel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public BufferedImage img[][] = new BufferedImage[22][17];
@@ -40,10 +44,16 @@ public class Panel extends JPanel{
 	private int xDoor;
 	private int yDoor;
 
+	/**
+	 * Start class for move IA
+	 * @param mvIA
+	 */
 	public Panel(IMooveIA mvIA) {
 		this.mvIA = mvIA;
 	}
-	
+	/**
+	 * add a decoration for your game like victory or end
+	 */
 	public void paintComponent(Graphics g) {
 		BufferedImage fond;
 		BufferedImage square;
@@ -128,99 +138,171 @@ public class Panel extends JPanel{
 		
 		repaint();
 	}
-	
+	/**
+	 * set x value of character
+	 * @param xPerso
+	 */
 	public void setXPerso(int xPerso) {
 		this.xPerso = xPerso;
 	}
-	
+	/**
+	 * return x value of character
+	 * @return
+	 */
 	public int getXPerso() {
 		return xPerso;
 	}
-	
+	/**
+	 * set y value of character
+	 * @param yPerso
+	 */
 	public void setYPerso(int yPerso) {
 		this.yPerso = yPerso;
 	}
-	
+	/**
+	 * return y value of character
+	 * @return
+	 */
 	public int getYPerso() {
 		return yPerso;
 	}
-	
+	/**
+	 * set x value of Lorann's picture
+	 * @param xPersoImage
+	 */
 	public void setXpersoImage(int xPersoImage) {
 		this.xPersoImage = xPersoImage;
 	}
-	
+	/**
+	 * return x value of Lorann's picture
+	 * @return
+	 */
 	public int getXpersoImage() {
 		return xPersoImage;
 	}
-	
+	/**
+	 * set y value of Lorann's picture 
+	 * @param yPersoImage
+	 */
 	public void setYpersoImage(int yPersoImage) {
 		this.yPersoImage = yPersoImage;
 	}
-	
+	/**
+	 * return y value of Lorann's picture
+	 * @return
+	 */
 	public int getYpersoImage() {
 		return yPersoImage;
 	}
-	
+	/**
+	 * set x value of key's picture
+	 * @param xKeyImage
+	 */
 	public void setXKeyImage(int xKeyImage) {
 		this.xKeyImage = xKeyImage;
 	}
-	
+	/**
+	 * return x value of key's picture
+	 * @return
+	 */
 	public int getXKeyImage() {
 		return xKeyImage;
 	}
-	
+	/**
+	 * set y value of key's picture
+	 * @param yKeyImage
+	 */
 	public void setYKeyImage(int yKeyImage) {
 		this.yKeyImage = yKeyImage;
 	}
-	
+	/**
+	 * return y value of key's picture
+	 * @return
+	 */
 	public int getYKeyImage() {
 		return yKeyImage;
 	}
-	
+	/**
+	 * return y value of power
+	 * @return
+	 */
 	public int getyPower() {
 		return yPower;
 	}
-
+	/**
+	 * set y value of power
+	 * @param yPower
+	 */
 	public void setyPower(int yPower) {
 		this.yPower = yPower;
 	}
-	
+	/**
+	 * return x value of power
+	 * @return
+	 */
 	public int getxPower() {
 		return xPower;
 	}
-
+	/**
+	 * set x value of power
+	 * @param xPower
+	 */
 	public void setxPower(int xPower) {
 		this.xPower = xPower;
 	}
-	
+	/**
+	 * return picture of ghost
+	 * @return
+	 */
 	public BufferedImage getImgGhost() {
 		return imgGhost;
 	}
-
+	/**
+	 * set picture of ghost
+	 * @param imgGhost
+	 */
 	public void setImgGhost(BufferedImage imgGhost) {
 		this.imgGhost = imgGhost;
 	}
-	
+	/**
+	 * return picture of square
+	 * @return
+	 */
 	public BufferedImage getImgSquare() {
 		return imgSquare;
 	}
-
+	/**
+	 * set picture of square
+	 * @param imgSquare
+	 */
 	public void setImgSquare(BufferedImage imgSquare) {
 		this.imgSquare = imgSquare;
 	}
-	
+	/**
+	 * return x value of door
+	 * @return
+	 */
 	public int getxDoor() {
 		return xDoor;
 	}
-
+	/**
+	 * set x value of door
+	 * @param xDoor
+	 */
 	public void setxDoor(int xDoor) {
 		this.xDoor = xDoor;
 	}
-
+	/**
+	 * return y value of door
+	 * @return
+	 */
 	public int getyDoor() {
 		return yDoor;
 	}
-
+	/**
+	 * set y value of door
+	 * @param yDoor
+	 */
 	public void setyDoor(int yDoor) {
 		this.yDoor = yDoor;
 	}
