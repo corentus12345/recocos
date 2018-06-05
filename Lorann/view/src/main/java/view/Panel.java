@@ -100,7 +100,7 @@ public class Panel extends JPanel{
 									
 				if(coordGhostx[getxPower()][getyPower()] != null && getxPower() == coordGhostx[getxPower()][getyPower()] && getyPower() == coordGhosty[getxPower()][getyPower()]) {
 					
-					img[getxPower()][getyPower()] = null;
+					img[getxPower()][getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));;
 					Frame.panel.coordGhostx[getxPower()][getyPower()] = null;
 					Frame.panel.coordGhosty[getxPower()][getyPower()] = null;
 					
@@ -121,7 +121,7 @@ public class Panel extends JPanel{
 					}
 				}	
 			}
-			
+		
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}

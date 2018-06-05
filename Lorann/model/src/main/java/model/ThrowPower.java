@@ -18,7 +18,6 @@ public class ThrowPower implements Runnable {
 				BufferedImage power = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
-				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
 				while(Frame.panel.getxPower() + 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() + 1][Frame.panel.getyPower()] && Frame.panel.getxPower() <= 20) {
 					
@@ -41,7 +40,6 @@ public class ThrowPower implements Runnable {
 				BufferedImage power = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
-				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
 				while(Frame.panel.getxPower() - 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() - 1][Frame.panel.getyPower()] && Frame.panel.getxPower() >= 2) {
 					
@@ -65,7 +63,6 @@ public class ThrowPower implements Runnable {
 				power = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
-				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
 				while(Frame.panel.getyPower() - 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() - 1] && Frame.panel.getyPower() >= 2) {
 					
@@ -89,7 +86,6 @@ public class ThrowPower implements Runnable {
 				power = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
-				Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = power;
 				Frame.power = true;
 				while(Frame.panel.getyPower() + 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() + 1] && Frame.panel.getyPower() <= 15) {
 					

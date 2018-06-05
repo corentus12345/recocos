@@ -7,12 +7,14 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 
+import contract.IHaveBDD;
 
-public class HaveBDD {
+
+public class HaveBDD implements IHaveBDD{
 	private ResultSet result;
 	private CallableStatement cStmt;
 	
-	public HaveBDD(int level) {
+	public void haveBDD(int level) {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
