@@ -1,9 +1,15 @@
 package model;
 
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY, Corentin BRION
+ *
+ */
 public class CleanBoard {
-	
+	/**
+	 * Clean the screen for add another level
+	 */
 	public CleanBoard() {
 		for(int x = 0; x < 22; x++) {
 			for(int y = 0; y < 17; y++) {

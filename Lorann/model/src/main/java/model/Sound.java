@@ -11,13 +11,19 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY
+ *
+ */
 public class Sound implements Runnable{
 	private Clip clip;
 	@Override
+	/**
+	 * Start the sound during the game
+	 */
 	public void run() {
 		try {
-			
 			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(getClass().getResource("/sound/Sound1.wav").toURI()));
 			clip = AudioSystem.getClip();
 			clip.open(audioInputStream);

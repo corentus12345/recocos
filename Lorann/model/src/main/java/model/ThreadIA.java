@@ -1,10 +1,17 @@
 package model;
 
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY
+ *
+ */
 public class ThreadIA implements Runnable{
 
 	@Override
+	/**
+	 * Start the Thread for IA can walk and kill Lorann
+	 */
 	public void run() {
 		try {
 		for(int x = 0; x < 21; x++) {

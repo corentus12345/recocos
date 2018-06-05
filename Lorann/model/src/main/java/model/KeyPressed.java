@@ -3,7 +3,11 @@ package model;
 import contract.IController;
 import contract.IKeyPressed;
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY
+ *
+ */
 public class KeyPressed implements IKeyPressed{
 	private MooveLorann mv = new MooveLorann();
 	

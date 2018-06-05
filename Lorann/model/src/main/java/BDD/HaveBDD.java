@@ -9,7 +9,11 @@ import java.sql.SQLException;
 
 import contract.IHaveBDD;
 
-
+/**
+ * 
+ * @author Corentin BOURGEY, Corentin BRION, Remi PAPIN
+ *
+ */
 public class HaveBDD implements IHaveBDD{
 	private ResultSet result;
 	private CallableStatement cStmt;

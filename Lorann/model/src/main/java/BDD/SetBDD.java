@@ -14,9 +14,16 @@ import decorations.WallHorizontal;
 import decorations.WallVertical;
 import model.Sound;
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY,Corentin BRION, remi PAPIN
+ *
+ */
 public class SetBDD {
-	
+	/**
+	 * Link the BDD with the programs to create an object with return of BDD
+	 * @param result
+	 */
 	public SetBDD(ResultSet result) {
 		try {
 			while(result.next()) {

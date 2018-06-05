@@ -12,9 +12,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Corentin BRION, Corentin BOURGEY, Remi PAPIN
+ *
+ */
 public class CreateBDD {
-	
+	/**
+	 * Create the BDD with a file .txt in the package files
+	 */
 	public CreateBDD() {
 		for(int level = 1; level <= 5; level++) {
 			ArrayList<String> list = new ArrayList<String>();

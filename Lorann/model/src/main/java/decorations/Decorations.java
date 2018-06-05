@@ -7,9 +7,33 @@ import java.net.URISyntaxException;
 import javax.imageio.ImageIO;
 
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY
+ *
+ */
 public class Decorations {
-
+/**
+ * Launch the method of object creation
+ * @param g
+ * @param t
+ * @param g2
+ * @param t2
+ * @param g3
+ * @param t3
+ * @param g4
+ * @param t4
+ * @param g5
+ * @param t5
+ * @param g6
+ * @param t6
+ * @param g7
+ * @param t7
+ * @param g8
+ * @param t8
+ * @param g9
+ * @param t9
+ */
 	protected Decorations(String g, String t, String g2, String t2, String g3, String t3, String g4, String t4, String g5, String t5, String g6, String t6, String g7, String t7, String g8, String t8, String g9, String t9) {
 		if(g != null) {
 			setImageWallHorizontal(g, t);
@@ -39,7 +63,11 @@ public class Decorations {
 			setImageEmpty(g9, t9);
 		}
 	}
-	
+	/**
+	 * create object of WallHorizontal
+	 * @param g
+	 * @param t
+	 */
 	private void setImageWallHorizontal(String g, String t) {
 		
 		int x = Integer.valueOf(g);	
@@ -51,7 +79,11 @@ public class Decorations {
 			e.printStackTrace();
 		}	
 	}
-	
+	/**
+	 * create object of WallVertical
+	 * @param g2
+	 * @param t2
+	 */
 	private void setImageWallVertical(String g2, String t2) {
 		
 		int x2 = Integer.valueOf(g2);
@@ -63,7 +95,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * create object of WallCorner
+	 * @param g3
+	 * @param t3
+	 */
 	private void setImageWallCorner(String g3, String t3) {
 		
 		int x3 = Integer.valueOf(g3);
@@ -75,7 +111,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * create object of Door
+	 * @param g4
+	 * @param t4
+	 */
 	private void setImageDoor(String g4, String t4) {
 		
 		int x4 = Integer.valueOf(g4);
@@ -91,7 +131,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Create object of Monster
+	 * @param g5
+	 * @param t5
+	 */
 	private void setImageMonster(String g5, String t5) {
 		
 		int x5 = Integer.valueOf(g5);
@@ -106,7 +150,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Create object of Item
+	 * @param g6
+	 * @param t6
+	 */
 	private void setImageItem(String g6, String t6) {
 		
 		int x6 = Integer.valueOf(g6);
@@ -120,7 +168,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Create object of Key
+	 * @param g7
+	 * @param t7
+	 */
 	private void setImageKey(String g7, String t7) {
 		
 		int x7 = Integer.valueOf(g7);
@@ -136,7 +188,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Create object of Lorann
+	 * @param g8
+	 * @param t8
+	 */
 	private void setImageLorann(String g8, String t8) {
 		
 		Frame.panel.setXPerso(Integer.valueOf(g8));
@@ -151,7 +207,11 @@ public class Decorations {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Create object of Empty
+	 * @param g9
+	 * @param t9
+	 */
 	private void setImageEmpty(String g9, String t9) {
 		
 		int x9 = Integer.valueOf(g9);

@@ -8,10 +8,17 @@ import java.net.URISyntaxException;
 import javax.imageio.ImageIO;
 
 import view.Frame;
-
+/**
+ * 
+ * @author Corentin BOURGEY
+ *
+ */
 public class ThrowPower implements Runnable {
 
 	@Override
+	/**
+	 * Create the power and add a hitbox for this
+	 */
 	public void run() {
 		if(Frame.direction == "RIGHT" && !Frame.power) {
 			try {
