@@ -12,7 +12,6 @@ import decorations.Monster;
 import decorations.WallCorner;
 import decorations.WallHorizontal;
 import decorations.WallVertical;
-import model.Sound;
 import view.Frame;
 /**
  * 
