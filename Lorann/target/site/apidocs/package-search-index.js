@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"controller"},{"l":"main"},{"l":"model"},{"l":"model.dao"},{"l":"showboard"},{"l":"view"}]
+packageSearchIndex = [{"l":"BDD"},{"l":"contract"},{"l":"controller"},{"l":"decorations"},{"l":"main"},{"l":"model"},{"l":"view"}]

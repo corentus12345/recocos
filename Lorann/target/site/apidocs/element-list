@@ -1,6 +1,7 @@
+BDD
+contract
 controller
+decorations
 main
 model
-model.dao
-showboard
 view
