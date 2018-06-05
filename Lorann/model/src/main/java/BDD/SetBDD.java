@@ -12,6 +12,7 @@ import decorations.Monster;
 import decorations.WallCorner;
 import decorations.WallHorizontal;
 import decorations.WallVertical;
+import model.Sound;
 import view.Frame;
 
 public class SetBDD {
@@ -90,6 +91,7 @@ public class SetBDD {
 			}
 			
 			Frame.debut = 1;
+			new Thread(new Sound()).start();
 			Frame.panel.repaint();
 			
 		} catch (NumberFormatException e) {

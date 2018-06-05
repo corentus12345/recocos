@@ -19,9 +19,17 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.power = true;
-				while(Frame.panel.getxPower() + 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() + 1][Frame.panel.getyPower()] && Frame.panel.getxPower() <= 20) {
+				while((Frame.panel.getxPower() + 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() + 1][Frame.panel.getyPower()] || Frame.panel.getxPower() + 1 == Frame.panel.coordGhostx[Frame.panel.getxPower() + 1][Frame.panel.getyPower()]) && Frame.panel.getxPower() <= 20) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+						
+						Frame.panel.img[Frame.panel.getxPower() + 1][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));;
+						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						
+					}
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setxPower(Frame.panel.getxPower() + 1);
@@ -41,9 +49,17 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.power = true;
-				while(Frame.panel.getxPower() - 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() - 1][Frame.panel.getyPower()] && Frame.panel.getxPower() >= 2) {
+				while((Frame.panel.getxPower() - 1 == Frame.panel.coordEmptyx[Frame.panel.getxPower() - 1][Frame.panel.getyPower()] || Frame.panel.getxPower() - 1 == Frame.panel.coordGhostx[Frame.panel.getxPower() - 1][Frame.panel.getyPower()]) && Frame.panel.getxPower() >= 2) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+						
+						Frame.panel.img[Frame.panel.getxPower() - 1][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));;
+						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						
+					}
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setxPower(Frame.panel.getxPower() - 1);
@@ -64,9 +80,17 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.power = true;
-				while(Frame.panel.getyPower() - 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() - 1] && Frame.panel.getyPower() >= 2) {
+				while((Frame.panel.getyPower() - 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() - 1] || Frame.panel.getyPower() - 1 == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower() - 1]) && Frame.panel.getyPower() >= 2) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+						
+						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower() - 1] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));;
+						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						
+					}
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setyPower(Frame.panel.getyPower() - 1);
@@ -87,9 +111,17 @@ public class ThrowPower implements Runnable {
 				Frame.panel.setxPower(Frame.panel.getXPerso());
 				Frame.panel.setyPower(Frame.panel.getYPerso());
 				Frame.power = true;
-				while(Frame.panel.getyPower() + 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() + 1] && Frame.panel.getyPower() <= 15) {
+				while((Frame.panel.getyPower() + 1 == Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower() + 1] || Frame.panel.getyPower() + 1 == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower() + 1]) && Frame.panel.getyPower() <= 15) {
 					
 					Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+					if(Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] != null && Frame.panel.getxPower() == Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] && Frame.panel.getyPower() == Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()]) {
+						
+						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower() + 1] = ImageIO.read(new File(getClass().getResource("/pictures/square.png").toURI()));
+						Frame.panel.img[Frame.panel.getxPower()][Frame.panel.getyPower()] = ImageIO.read(new File(getClass().getResource("/pictures/fireball_1.png").toURI()));;
+						Frame.panel.coordGhostx[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						Frame.panel.coordGhosty[Frame.panel.getxPower()][Frame.panel.getyPower()] = null;
+						
+					}
 					Frame.panel.coordEmptyx[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getxPower();
 					Frame.panel.coordEmptyy[Frame.panel.getxPower()][Frame.panel.getyPower()] = Frame.panel.getyPower();
 					Frame.panel.setyPower(Frame.panel.getyPower() + 1);
